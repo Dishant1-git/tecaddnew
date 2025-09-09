@@ -161,9 +161,157 @@ body {
     --overlay-c: rgba(12, 16, 28, .65);
 }
 
-.navbar {
-    background: transparent !important;
-    z-index: 10;
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background: transparent;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 25px;
+      margin-top: 18px;
+      margin-right: 120px;
+      position: relative;
+    }
+
+    .navbar .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      transition: color 0.3s;
+    
+    }
+
+    .navbar .nav-links a:hover {
+      color: #3a92ff;
+    }
+
+    .navbar .btn {
+      background: #1476ff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      margin-left: 15px;
+      margin-top: -10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .navbar .btn-ent {
+      border: 1px solid white;
+      background-color: transparent;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      margin-left: 15px;
+      margin-top: -10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* Dropdown Mega Menu */
+    .dropdown {
+      position: absolute;
+      top: 60px;
+      left: -120px;
+      width: 100%;
+      display: none;
+      background: linear-gradient(135deg, #0d1c33, #0c1f3f);
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      z-index: 99;
+    }
+
+    .nav-links a:hover + .dropdown,
+    .dropdown:hover {
+      display: flex;
+    }
+
+    .dropdown {
+      justify-content: space-between;
+    }
+
+    .dropdown .services {
+      flex: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px 40px;
+    }
+
+    .dropdown .services h4 {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .dropdown .services p {
+      font-size: 12px;
+      color: #cfcfcf;
+      margin: 0 0 10px;
+    }
+
+    .dropdown .eguide {
+      flex: 1;
+      border-left: 1px solid rgba(255,255,255,0.2);
+      padding-left: 20px;
+    }
+
+    .dropdown .eguide img {
+      width: 100px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .dropdown .eguide h5 {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #3a92ff;
+    }
+
+    .dropdown .eguide p {
+      font-size: 12px;
+      margin: 3px 0;
+    }
+
+    .dropdown .eguide button {
+      background: #1476ff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: white;
+      cursor: pointer;
+    }
+    .has-dropdown {
+  position: relative;
+  display: inline-flex;
+  /* align-items: center; */
+}
+.has-dropdown::after {
+  content: "▼";  /* up arrow */
+  font-size: 10px;
+  margin-left: 5px;
+  transition: content 0.3s ease;
+}
+
+/* Arrow on hover (down) */
+.has-dropdown:hover::after {
+  content: "▲";  /* down arrow */
 }
 
 .hero {
@@ -188,7 +336,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(12, 16, 28, .65) 0%, rgba(12, 16, 28, .55) 40%, rgba(12, 16, 28, .65) 100%);
+    background: linear-gradient(180deg, rgba(12, 16, 28, 0.858) 0%, rgba(12, 16, 28, 0.803) 40%, rgb(12, 16, 28) 100%);
     z-index: 1;
 }
 
@@ -236,8 +384,10 @@ body {
     transition: transform 0.6s ease-in-out;
 }
 #dishant{
-    margin-top: 0px ;
-    padding: 0px;
+    margin: 0px ;
+ 
+    padding: 0px 100px;
+   
 }
 
 .text-content p {
@@ -329,8 +479,9 @@ body {
 .faq-header {
     padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+  justify-content: space-between;
+    gap: 12px;
     font-size: 18px;
     font-weight: 600;
 }
@@ -338,10 +489,18 @@ body {
 .faq-header:hover {
     background: #10294f;
 }
-
-.arrow {
+#kaushal{
+    height:80px;
+    width: 100px;
+}
+.faq-header .arrow {
+    margin-left: 10px;
+    font-size: 22px;
     transition: transform 0.3s ease;
-    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    position: static;
+    padding-top:30px ;
 }
 
 .faq-content {
@@ -577,7 +736,7 @@ body {
     position: sticky;
     top: 0px;
 }
-.sticky-section img,a {
+.sticky-section img,.sticky-section  a {
     top: 100px;
     position: sticky;
 }
@@ -594,6 +753,7 @@ body {
 
 #section2 {
     height: 800px;
+
     background-color: black;
 }
 
@@ -671,6 +831,14 @@ body {
     }
 }
 
+
+
+
+
+
+
+
+
 /* new added  css */
 
 .tech-header {
@@ -706,6 +874,162 @@ body {
   }
 }
 
+
+
+ .slider {
+      display: flex;
+      width: 300vw; /* 3 sections = 3x100vw */
+      height: 100vh;
+      transition: transform 0.8s ease;
+    }
+
+    .section2 {
+      flex: 0 0 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .section-content1 {
+      max-width: 1100px;
+        margin-right: 5vw;
+      width: 95%;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.06),
+                  0 20px 40px rgba(0,0,0,.25);
+    }
+    #tushar{
+        overflow: hidden;
+        margin: 0px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+    p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    /* Section 1 - Offshore Steps */
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .step { position: relative; flex: 1; min-width: 200px; text-align: center; }
+    .circle {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: #fff;
+      margin: 0 auto 15px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 20px; box-sizing: border-box;
+      color: #000; font-size: 14px; position: relative; overflow: hidden;
+    }
+    .circle.blue { background: var(--blue); color: #fff; }
+    .circle::before {
+      content: ""; position: absolute; top: -4px; left: -4px;
+      width: calc(100% + 8px); height: calc(100% + 8px);
+      border-radius: 50%;
+      border-top: 4px solid var(--blue);
+      border-right: 4px solid var(--blue);
+      border-bottom: 4px dashed var(--blue);
+      border-left: 4px dashed var(--blue);
+      transform: rotate(0deg);
+      transition: transform 0.6s ease;
+      z-index: -1;
+    }
+    .circle:hover::before { transform: rotate(180deg); }
+    .arrow { position: absolute; top: 50%; right: -50px; transform: translateY(-50%); font-size: 30px; color: #fff; }
+    @media(max-width: 992px) {
+      .steps { flex-direction: column; }
+      .arrow { position: relative; top: auto; right: auto; transform: rotate(90deg); margin: 10px auto; }
+    }
+
+    /* Section 2 - Clocks */
+    .clocks {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      gap: 20px;
+    }
+    .clock-box { text-align: center; }
+    .clock {
+      width: 150px; height: 150px;
+      display: block; margin-inline: auto;
+      border-radius: 50%; background: #fff;
+    }
+    .location { margin-top: 10px; font-weight: 700; }
+    .digital-time { margin-top: 6px; font-family: monospace; font-size: 14px; }
+
+    /* Section 3 - Arrow Line */
+    .diagram { display: flex; justify-content: center; }
+    .arrow-line {
+      width: 550px; height: 50px;
+      background: var(--blue);
+      display: flex; align-items: center; justify-content: space-between;
+      color: white; font-weight: bold; font-size: 14px;
+      border-radius: 4px; position: relative;
+    }
+    .arrow-line::after {
+      content: ""; position: absolute; right: -40px; top: 50%;
+      transform: translateY(-50%);
+      border-left: 40px solid var(--blue);
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+    }
+    .arrow-label { flex: 1; text-align: center; }
+    .arrow-label:first-child { border-right: 2px solid #fff; }
+    .controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+ .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .controls button {
+      background: var(--blue);
+      border: none;
+      color: white;
+      font-size: 20px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #0056cc;
+    }
+
+.navbar{
+    background: transparent;
+    background-color: #02011783;
+}
  /* Ultra-Modern Tech Stack Section - Blue Theme */
         .tech-stack-section {
             position: relative;
