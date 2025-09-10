@@ -450,3 +450,4 @@ window.addEventListener('resize', () => {
     timers.push(drawClock(document.getElementById('au'),  'Australia/Sydney','au-time'));
   }, 150);
 });
+
