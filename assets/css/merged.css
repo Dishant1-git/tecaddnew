@@ -107,7 +107,8 @@
 
     .nav-links .mobile{
         display: block;
-       
+        display: flex;
+        justify-content: end;
     }
     .nav-links{
         gap: 5px !important;
@@ -985,7 +986,7 @@ body {
       border-radius: 50%;
       background: #fff;
       margin: 0 auto 15px;
-      display: flex; flex-direction: column;
+      display: flex; 
       justify-content: center; align-items: center;
       padding: 20px; box-sizing: border-box;
       color: #000; font-size: 14px; position: relative; overflow: hidden;

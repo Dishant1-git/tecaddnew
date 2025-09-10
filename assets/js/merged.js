@@ -34,6 +34,29 @@ if (wordSpan && images.length) {
   }, 3000);
 }
 
+// Animated Counters for .counter-box
+document.addEventListener('DOMContentLoaded', function() {
+  const counters = document.querySelectorAll('.counter-box h3');
+  counters.forEach(counter => {
+    const targetText = counter.textContent.trim();
+    const target = parseInt(targetText.replace(/\D/g, ''));
+    const plus = targetText.includes('+');
+    let count = 0;
+    const duration = 1800; // ms
+    const step = Math.ceil(target / (duration / 16));
+    function updateCounter() {
+      count += step;
+      if (count >= target) {
+        counter.textContent = target + (plus ? '+' : '');
+      } else {
+        counter.textContent = count + (plus ? '+' : '');
+        requestAnimationFrame(updateCounter);
+      }
+    }
+    counter.textContent = '0' + (plus ? '+' : '');
+    requestAnimationFrame(updateCounter);
+  });
+});
 // JS for FAQ accordion (faq.html)
 const faqItems = document.querySelectorAll(".faq-item");
 faqItems.forEach(item => {
