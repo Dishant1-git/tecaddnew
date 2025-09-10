@@ -120,6 +120,10 @@
         justify-content: center !important;
     }
 }
+
+@media(max-width:991px){
+    #tushar{ display: none;}
+}
 .mobile{
     margin-top: -10px;
     background-color: #1476ff ;
