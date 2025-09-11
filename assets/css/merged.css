@@ -1,3 +1,39 @@
+@media (max-width: 991px) {
+    .wall-section h2 {
+        font-size: 1.5rem;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+    .awards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 98vw;
+    }
+    .award-card {
+        padding: 18px 8px;
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 575px) {
+    .wall-section h2 {
+        font-size: 1.1rem;
+        margin-left: 10px;
+        margin-bottom: 18px;
+    }
+    .awards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 99vw;
+    }
+    .award-card {
+        padding: 10px 4px;
+        font-size: 0.85rem;
+    }
+    .award-card img {
+        width: 50px;
+        margin-bottom: 8px;
+    }
+}
 /* --- Optimized CSS for main sections (no duplicates) --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overflow-x: hidden; }
@@ -53,7 +89,7 @@ body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overf
 } */
 @media (max-width: 1024px) {
     .faq-section {
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
         width: 100vw !important;
         padding: 0 10px !important;
@@ -1574,3 +1610,50 @@ justify-content: end;
         .tech-card {
             will-change: transform;
         }
+
+
+        
+
+    .wall-section h2 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 50px;
+      margin-left: 110px;
+    }
+
+    .awards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .award-card {
+      background: #ffffff00;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border:1px solid rgb(158, 199, 253)
+    }
+
+    .award-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .award-card img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .award-card h3 {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+    }
+
+    .award-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
