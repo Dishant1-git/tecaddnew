@@ -1250,7 +1250,7 @@ justify-content: end;
         .container {
             max-width: 1200px;
             margin: 100px auto;
-           
+           padding-top: 100px;
             position: relative;
             z-index: 2;
         }
@@ -1656,4 +1656,64 @@ justify-content: end;
     .award-card p {
       font-size: 0.95rem;
       color: #444;
+    }
+
+
+    .expertise-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #0f172a 40%, rgba(15, 23, 42, 0.6) 70%, transparent),
+                  url("https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=1200") center/cover;
+      border-radius: 20px;
+      color: white;
+      width: 85%;
+      max-width: 1200px;
+      height: 350px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin: 100px auto ;
+    }
+
+    .expertise-text {
+      max-width: 400px;
+    }
+
+    .expertise-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .expertise-text p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    .expertise-text a {
+      display: inline-block;
+      padding: 12px 25px;
+      border: 2px solid white;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .expertise-text a:hover {
+      background: white;
+      color: #0f172a;
+    }
+
+    @media (max-width: 768px) {
+      .expertise-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        height: auto;
+      }
+      .expertise-text {
+        margin-bottom: 20px;
+      }
     }
