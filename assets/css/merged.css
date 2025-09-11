@@ -140,14 +140,14 @@ body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overf
     .faq-section {
         flex-direction: column !important;
         gap: 10px !important;
-        padding: 0 10px 0px 30px !important;
+        padding: 0 30px !important;
         max-width: 300px;
     }
     .faq-container {
         max-width: 300px !important;
     }
     .faq-item {
-        width: 276px !important;
+        width: 290px !important;
         max-width: 100% !important;
     }
     .sticky-section {
