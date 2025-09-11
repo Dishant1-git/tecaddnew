@@ -1,17 +1,17 @@
 // Click-based interactive section (click-services-section)
-document.addEventListener('DOMContentLoaded', function() {
-  const clickMenuItems = document.querySelectorAll('.click-menu-item');
-  const clickContentBlocks = document.querySelectorAll('.click-content-block');
-  clickMenuItems.forEach(item => {
-    item.addEventListener('click', function() {
-      clickMenuItems.forEach(i => i.classList.remove('active'));
-      clickContentBlocks.forEach(c => c.classList.remove('active'));
-      item.classList.add('active');
-      const target = document.getElementById(item.dataset.target);
-      if (target) target.classList.add('active');
-    });
-  });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   const clickMenuItems = document.querySelectorAll('.click-menu-item');
+//   const clickContentBlocks = document.querySelectorAll('.click-content-block');
+//   clickMenuItems.forEach(item => {
+//     item.addEventListener('click', function() {
+//       clickMenuItems.forEach(i => i.classList.remove('active'));
+//       clickContentBlocks.forEach(c => c.classList.remove('active'));
+//       item.classList.add('active');
+//       const target = document.getElementById(item.dataset.target);
+//       if (target) target.classList.add('active');
+//     });
+//   });
+// });
 // JS for transformation section (banner.html)
 const words = ["TRANSFORMATION", "INNOVATION", "EXCELLENCE"];
 const images = [
