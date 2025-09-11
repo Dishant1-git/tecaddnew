@@ -183,27 +183,86 @@
     cursor: pointer;
   }
 
-  /* Mobile */
-  @media (max-width: 991px) {
-    .nav-container { flex-wrap: wrap; }
-    .nav-links {
-      flex-direction: column;
-      width: 100%;
-      display: none;
-      margin-top: 1rem;
+    /* Hero Section Fixes */
+    .hero {
+        min-height: 80vh;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: stretch;
     }
-    .nav-links.show { display: flex; }
-    .mega-menu {
-      position: static;
-      width: 100%;
-      flex-direction: column;
-      padding: 1rem;
-      box-shadow: none;
-      border-radius: 0;
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        min-height: 80vh;
+        max-height: 100vh;
     }
-    .mega-left { grid-template-columns: 1fr; }
-    .nav-toggle { display: block; }
-  }
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 100%);
+        z-index: 2;
+    }
+    .hero .container {
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+    }
+        .containermain {
+            position: relative;
+            z-index: 4;
+            margin-top: -60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            padding-top: 40px;
+        }
+    @media (max-width: 991px) {
+        .nav-container { flex-wrap: wrap; }
+        .nav-links {
+            flex-direction: column;
+            width: 100%;
+            display: none;
+            margin-top: 1rem;
+        }
+        .nav-links.show { display: flex; }
+        .mega-menu {
+            position: static;
+            width: 100%;
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        .mega-left { grid-template-columns: 1fr; }
+        .nav-toggle { display: block; }
+        .hero {
+            min-height: 50vh;
+        }
+        .hero-video {
+            min-height: 50vh;
+        }
+        .hero .container {
+            min-height: 50vh;
+        }
+        .containermain {
+            margin-top: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
 </style>
 
 <!-- JS -->
@@ -232,8 +291,8 @@
 
 
     <!-- Replace the previous .hero section with this -->
-    <section class="hero position-relative overkground video -->
-        <video class="hero-video" playsinline autoplay muted loop poster="fallback.jpg">
+    <section class="hero position-relative overkground video" >
+        <video class="hero-video"  playsinline autoplay muted loop poster="fallback.jpg">
             <source src="https://media.apptunix.com/wp-content/uploads/2025/04/04062703/home_banner_video.mp4"
                 type="video/mp4">
             <!-- Optional WebM for better compression -->
@@ -1678,14 +1737,14 @@
     <script>
         // Responsive Navbar JS
         const btnm = document.querySelector('.btnm button');
-        const navLinks = document.querySelector('.nav-links');
+    const navLinks2 = document.querySelector('.nav-links');
         btnm && btnm.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
+            navLinks2.classList.toggle('open');
         });
         // Close nav on link click (mobile)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) navLinks.classList.remove('open');
+                if (window.innerWidth <= 768) navLinks2.classList.remove('open');
             });
         });
         // Dropdowns on click for mobile
@@ -1702,7 +1761,7 @@
         });
         // Close dropdowns when nav closes
         btnm && btnm.addEventListener('click', () => {
-            if (!navLinks.classList.contains('open')) {
+            if (!navLinks2.classList.contains('open')) {
                 document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
             }
         });
