@@ -1,3 +1,60 @@
+// --- JS from index.html (navbar and responsive) ---
+// Navbar toggle and dropdown
+const toggleBtn = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const dropdownLinks = document.querySelectorAll('.nav-toggle-link');
+
+// Toggle nav on mobile
+if (toggleBtn && navLinks) {
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+}
+
+// Toggle dropdowns on mobile
+dropdownLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    if (window.innerWidth <= 991) {
+      e.preventDefault();
+      const parent = link.parentElement;
+      const menu = parent.querySelector('.mega-menu');
+      if (menu) menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  });
+});
+
+// Responsive Navbar JS (secondary nav)
+const btnm = document.querySelector('.btnm button');
+const navLinks2 = document.querySelector('.nav-links');
+if (btnm && navLinks2) {
+  btnm.addEventListener('click', () => {
+    navLinks2.classList.toggle('open');
+  });
+  // Close nav on link click (mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) navLinks2.classList.remove('open');
+    });
+  });
+  // Dropdowns on click for mobile
+  document.querySelectorAll('.has-dropdown').forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const dropdown = this.nextElementSibling;
+        if (dropdown && dropdown.classList.contains('dropdown')) {
+          dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+      }
+    });
+  });
+  // Close dropdowns when nav closes
+  btnm.addEventListener('click', () => {
+    if (!navLinks2.classList.contains('open')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+    }
+  });
+}
 // Click-based interactive section (click-services-section)
 // document.addEventListener('DOMContentLoaded', function() {
 //   const clickMenuItems = document.querySelectorAll('.click-menu-item');

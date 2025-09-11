@@ -1,3 +1,40 @@
+/* --- Optimized CSS for main sections (no duplicates) --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overflow-x: hidden; }
+.nav-wrapper { background: #111; color: #fff; }
+.nav-container { max-width: 1200px; margin: auto; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.nav-logo { font-size: 1.5rem; font-weight: bold; color: #3a92ff; }
+.nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; flex-direction: row; width: auto; }
+.nav-links li { position: relative; }
+.nav-links a { text-decoration: none; color: #fff; font-weight: 500; cursor: pointer; }
+.nav-actions { display: flex; gap: 0.5rem; align-items: center; }
+.btn-primary { background: #3a92ff; border: none; color: #fff; padding: 0.4rem 0.8rem; border-radius: 5px; cursor: pointer; }
+.btn-secondary { background: transparent; border: 1px solid #fff; color: #fff; padding: 0.4rem 0.8rem; border-radius: 5px; cursor: pointer; }
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; }
+.mega-menu { position: absolute; top: 100%; left: 0; width: 800px; background: #fff; color: #000; display: none; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-radius: 8px; z-index: 100; justify-content: space-between; gap: 2rem; }
+.mega-left { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 2rem; flex: 2; }
+.mega-left h4 { margin-bottom: 0.3rem; color: #3a92ff; }
+.mega-right { flex: 1; background: #f6f6f6; padding: 1rem; border-radius: 8px; text-align: center; }
+.mega-right img { max-width: 100%; border-radius: 6px; }
+.mega-right button { margin-top: 0.5rem; padding: 0.4rem 0.8rem; background: #3a92ff; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+.hero { min-height: 80vh; position: relative; overflow: hidden; display: flex; align-items: stretch; color: #fff; isolation: isolate; }
+.hero-video { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; min-height: 80vh; max-height: 100vh; object-position: center; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 100%); z-index: 2; }
+.hero .container { position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh; }
+.containermain { position: relative; z-index: 4; margin-top: -60px; box-shadow: 0 0 20px rgba(0,0,0,0.05);  padding-top: 40px; background: linear-gradient(to bottom, #020117 0%, #274690 55%, #abaaba 100%); }
+@media (min-width: 992px) { .nav-item:hover > .mega-menu { display: flex; } }
+@media (max-width: 991px) {
+    .nav-container { flex-wrap: wrap; }
+    .nav-links { flex-direction: column; width: 100%; display: none; margin-top: 1rem; }
+    .nav-links.show { display: flex; }
+    .mega-menu { position: static; width: 100%; flex-direction: column; padding: 1rem; box-shadow: none; border-radius: 0; }
+    .mega-left { grid-template-columns: 1fr; }
+    .nav-toggle { display: block; }
+    .hero { min-height: 50vh; }
+    .hero-video { min-height: 50vh; }
+    .hero .container { min-height: 50vh; }
+    .containermain { margin-top: 0; border-radius: 0; box-shadow: none; }
+}
 /* @media (max-width: 1024px) {
     .navbar {
         padding: 0px !important;
@@ -28,7 +65,7 @@
     }
     .faq-item {
         width: 100% !important;
-        max-width: 600px !important;
+        max-width: 276px !important;
         min-width: 220px !important;
     }
 }
@@ -43,7 +80,7 @@
         flex-direction: row;
     }
     .section2 {
-        flex: 0 0 100vw !important;
+       
         width: 100vw !important;
         height: auto !important;
         min-height: 400px;
@@ -103,13 +140,14 @@
     .faq-section {
         flex-direction: column !important;
         gap: 10px !important;
-        padding: 0 10px !important;
+        padding: 0 0px !important;
+        max-width: 300px;
     }
     .faq-container {
-        max-width: 100% !important;
+        max-width: 300px !important;
     }
     .faq-item {
-        width: 100% !important;
+        width: 276px !important;
         max-width: 100% !important;
     }
     .sticky-section {
