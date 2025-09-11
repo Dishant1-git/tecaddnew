@@ -5,7 +5,7 @@
         margin-bottom: 30px;
     }
     .awards {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 10px;
         max-width: 98vw;
     }
@@ -21,7 +21,7 @@
         margin-bottom: 18px;
     }
     .awards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 8px;
         max-width: 99vw;
     }
