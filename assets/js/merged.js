@@ -1,3 +1,74 @@
+// --- We Care Slider: 3 at a time, center wider, infinite, autoplay, responsive ---
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderr = document.querySelector('.sliderr');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  if (!sliderr || !prev || !next) return;
+  let current = 1;
+  let autoInterval;
+
+  function updateSlides() {
+    const slides = sliderr.querySelectorAll('.slide');
+    const total = slides.length;
+    slides.forEach((slide, i) => {
+      slide.classList.remove('left', 'center', 'right');
+      slide.style.display = 'none';
+    });
+    // Calculate indices for left, center, right
+    const left = (current - 1 + total) % total;
+    const center = current % total;
+    const right = (current + 1) % total;
+    slides[left].classList.add('left');
+    slides[left].style.display = '';
+    slides[center].classList.add('center');
+    slides[center].style.display = '';
+    slides[right].classList.add('right');
+    slides[right].style.display = '';
+  }
+
+  function goTo(dir) {
+    const slides = sliderr.querySelectorAll('.slide');
+    const total = slides.length;
+    current = (current + dir + total) % total;
+    updateSlides();
+  }
+
+  prev.addEventListener('click', function() {
+    goTo(-1);
+    resetAutoplay();
+  });
+  next.addEventListener('click', function() {
+    goTo(1);
+    resetAutoplay();
+  });
+
+  function startAutoplay() {
+    autoInterval = setInterval(() => goTo(1), 3000);
+  }
+  function stopAutoplay() {
+    clearInterval(autoInterval);
+  }
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+  sliderr.addEventListener('mouseenter', stopAutoplay);
+  sliderr.addEventListener('mouseleave', startAutoplay);
+  sliderr.addEventListener('touchstart', stopAutoplay, {passive:true});
+  sliderr.addEventListener('touchend', startAutoplay, {passive:true});
+
+  // Overlay play button
+  sliderr.querySelectorAll('.overlay button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const url = this.getAttribute('data-url');
+      if (url) window.open(url, '_blank');
+    });
+  });
+
+  updateSlides();
+  startAutoplay();
+});
 // --- JS from index.html (navbar and responsive) ---
 // Navbar toggle and dropdown
 const toggleBtn = document.querySelector('.nav-toggle');
@@ -531,3 +602,4 @@ window.addEventListener('resize', () => {
   }, 150);
 });
 
+// ...existing code...
