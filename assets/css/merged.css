@@ -138,13 +138,13 @@ body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overf
 /* Gradient background for containermain only */
 .containermain {
     margin-top: -100px;
-    background: linear-gradient(to bottom, #020117 0%, #274690 55%, #abaaba 100%);
+    background: linear-gradient(to bottom, #020117 0%, #274690 55%, #938fcb 100%);
     
 }
 .containermain2 {
     margin-top: -100px;
     
-    background: linear-gradient(to top, #020117 0%, #274690 55%, #abaaba  100%);
+    background: linear-gradient(to top, #020117 0%, #274690 55%, #938fcb 100%);
     
 }
 /* Responsive tweaks for mobile/tablet only, keep PC design unchanged */
@@ -1216,19 +1216,14 @@ body {
     .arrow-label { flex: 1; text-align: center; }
     .arrow-label:first-child { border-right: 2px solid #fff; }
     .controls {
-justify-content: end;
+justify-content: space-between;
   display: flex;
   gap: 10px;
   z-index: 999;
+  margin: 0px 178px ;
 }
 
- .controls {
-    
-      
-      display: flex;
-      gap: 10px;
-      z-index: 999;
-    }
+
 
     .controls button {
       background: var(--blue);
@@ -1640,7 +1635,7 @@ justify-content: end;
       font-size: 2.2rem;
       font-weight: bold;
       margin-bottom: 50px;
-      margin-left: 110px;
+     
     }
 
     .awards {
@@ -1694,7 +1689,7 @@ justify-content: end;
       height: 350px;
       padding: 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      margin: 100px auto ;
+      margin: 200px auto ;
     }
 
     .expertise-text {
@@ -1836,7 +1831,7 @@ justify-content: end;
 
      .slider-container {
       padding: 40px 20px;
-      text-align: center;
+    
     }
 
     .slider-container h2 {
@@ -1855,7 +1850,7 @@ justify-content: end;
     .slider-wrapper {
       position: relative;
       max-width: 1200px;
-      margin: auto;
+      margin-top: 100px;
       overflow: hidden;
     }
 
@@ -1976,4 +1971,121 @@ justify-content: end;
 
     .next {
       right: -60px;
+    }
+
+
+
+
+
+      .industries {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 0px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #0f4a92;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      background: #0f2f57;
+      padding: 15px;
+      flex: 1;
+    }
+
+    .card-content h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .card-content ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card-content ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    .card-content ul li::before {
+      content: "✔";
+      margin-right: 8px;
+      color: #00ffcc;
+      font-size: 14px;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 1024px) {
+      .card img {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .industries {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .card img {
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .industries {
+        grid-template-columns: 1fr;
+      }
+      .card img {
+        height: 140px;
+      }
+    }
+
+
+     .globe img{
+        position: absolute;
+     height: 550px;
+     width: 650px;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-duration: 50s;
+    top: 50px;
+
+    }
+    .globe{
+         padding: 0px 350px;
+        height: 200px;
+       
+    }
+    .footer{
+        
+         position: relative;
+         height: 300px;
+        background-color: #050326;
+       
+    }
+    @keyframes spin {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
     }
