@@ -13,6 +13,9 @@
         padding: 18px 8px;
         font-size: 0.95rem;
     }
+    #app{
+        width: 600px !important;
+    }
 }
 @media (max-width: 575px) {
     .wall-section h2 {
@@ -33,6 +36,14 @@
         width: 50px;
         margin-bottom: 8px;
     }
+.main{
+   place-items: start;
+   width: 500px;
+}
+.resizable{
+    width: 480px !important;
+}
+ 
 }
 /* --- Optimized CSS for main sections (no duplicates) --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2153,8 +2164,8 @@ justify-content: space-between;
                     scale: var(--scale);
 
                     min-height: 100px;
-                    min-width: 800px;
-                    max-width: calc(100% - 2rem);
+                    width: 800px;
+                  
                 }
 
                 .resizable[data-spill=true] {
