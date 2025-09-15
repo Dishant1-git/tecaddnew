@@ -183,10 +183,9 @@ body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overf
         min-height: 200px !important;
     }
     .faq-section {
-        flex-direction: column !important;
+        flex-direction: row !important;
         gap: 10px !important;
-        padding: 0 10px 0px 30px !important;
-        max-width: 300px;
+      
     }
     .faq-container {
         max-width: 300px !important;
@@ -214,6 +213,11 @@ body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overf
     }
 }
 @media (max-width: 575px) {
+
+    .faq-section{
+        flex-direction: column !important;
+        padding: 0px 80px;
+    }
     .transformation-section h2 {
         font-size: 1.1rem !important;
     }
@@ -928,10 +932,7 @@ body {
 }
 
 /* Sticky Section */
-.sticky-section {
-    
-   
-}
+
 
 .cont {
     width: 100%;
