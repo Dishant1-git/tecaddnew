@@ -1,3 +1,33 @@
+
+
+
+
+
+    const slides = document.querySelectorAll(".slidee ");
+const heading = document.getElementById("sliderHeading");
+
+let current = 0;
+const changeSlide = () => {
+  // remove active
+  slides[current].classList.remove("is-active");
+
+  // move to next
+  current = (current + 1) % slides.length;
+
+  // add active
+  slides[current].classList.add("is-active");
+
+  // update heading
+  heading.textContent = slides[current].dataset.heading;
+};
+
+// Auto-change every 4 seconds
+setInterval(changeSlide, 4000);
+
+
+
+
+
 // --- We Care Slider: 3 at a time, center wider, infinite, autoplay, responsive ---
 document.addEventListener('DOMContentLoaded', function() {
   const sliderr = document.querySelector('.sliderr');
