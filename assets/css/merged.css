@@ -1780,6 +1780,10 @@ justify-content: space-between;
       .expertise-text {
         margin-bottom: 20px;
       }
+      .main{
+   place-items: start;
+   width: 500px;
+}
 
 
        #app{
