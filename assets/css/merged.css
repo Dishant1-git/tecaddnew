@@ -38,6 +38,12 @@
     #app{
         width: 600px !important;
     }
+     .imagelarge{
+    display: none !important;
+  }
+    .imagediv{
+    display: block !important;
+  }
 }
 @media (max-width: 575px) {
     .wall-section h2 {
@@ -64,6 +70,14 @@
 }
 .resizable{
     width: 480px !important;
+}
+
+.imageflex{
+  flex-direction: column !important;
+}
+
+.img1 img{
+  width: 100%  !important;
 }
  
 }
@@ -2096,19 +2110,21 @@ justify-content: space-between;
 
      .globe img{
         position: absolute;
-     height: 550px;
-     width: 650px;
+     height: 250px;
+     width: 350px;
     animation-name: spin;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: normal;
     animation-duration: 60s;
-    top: 50px;
+    top: 250px;
 
     }
     .globe{
-         padding: 0px 350px;
+        display: flex;
+        justify-content: center;
         height: 200px;
+        
        
     }
     .footer{
@@ -2397,6 +2413,14 @@ justify-content: space-between;
   .sliderr {
     height: 250px;
   }
+  .imageflex{
+    flex-direction: column !important;
+   align-items: center;
+  }
+
+ 
+
+
 }
 
 @media (max-width: 580px) {
@@ -2406,4 +2430,26 @@ justify-content: space-between;
   .sliderr {
     height: 200px;
   }
+}
+.imagediv{
+  display: none;
+}
+
+.imageflex{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+ 
+}
+
+.img1,.img2{
+  width: 400px;
+}
+
+.img1 img,.img2 img{
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 20px;
 }
