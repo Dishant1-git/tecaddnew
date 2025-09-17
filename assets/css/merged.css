@@ -65,7 +65,7 @@
         margin-bottom: 8px;
     }
 .main{
-   place-items: start;
+  place-items: start !important;
    width: 500px;
 }
 .resizable{
@@ -1781,7 +1781,7 @@ justify-content: space-between;
         margin-bottom: 20px;
       }
       .main{
-   place-items: start;
+   place-items: start !important;
    width: 500px;
 }
 
