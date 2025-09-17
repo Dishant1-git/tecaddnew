@@ -79,6 +79,9 @@
 
 }
 .img1{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
   width: 100%  !important;
 }
 .img1 img{
@@ -86,6 +89,7 @@
 
 
  
+}
 }
 /* --- Optimized CSS for main sections (no duplicates) --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
