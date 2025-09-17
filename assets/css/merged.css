@@ -75,7 +75,7 @@
 
 .imageflex{
   flex-direction: column !important;
-  justify-content: center !important;
+  align-items: center !important;
 }
 
 .img1 img{
