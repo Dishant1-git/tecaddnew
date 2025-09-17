@@ -78,6 +78,9 @@
   align-items: center !important;
 
 }
+.img1{
+  width: 100%  !important;
+}
 .img1 img{
   width: 400px  !important;
 
