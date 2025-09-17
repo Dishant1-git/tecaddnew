@@ -2436,6 +2436,12 @@ justify-content: space-between;
     flex-direction: column !important;
    align-items: center;
   }
+  .hover2{
+    display: block !important;
+  }
+  .hover1{
+    display: none !important;
+  }
 
  
 
@@ -2471,4 +2477,20 @@ justify-content: space-between;
   width: 100%;
   border-radius: 15px;
   margin-top: 20px;
+}
+
+
+.hover2{
+  display: none;
+}
+.preview{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+}
+.contentp{
+  background-color: #1f2c58;
+  padding: 50px;
+  border-radius: 30px;
 }
