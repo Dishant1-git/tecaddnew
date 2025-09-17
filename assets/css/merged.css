@@ -69,8 +69,9 @@
    width: 350px !important;
 }
 .resizable{
-    width: 250px !important;
+    width: 300px !important;
 }
+
 
 .imageflex{
   flex-direction: column !important;
