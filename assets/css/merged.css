@@ -69,7 +69,7 @@
    width: 500px;
 }
 .resizable{
-    width: 480px !important;
+    width: 400px !important;
 }
 
 .imageflex{
@@ -1780,6 +1780,11 @@ justify-content: space-between;
       .expertise-text {
         margin-bottom: 20px;
       }
+
+
+       #app{
+        width: 300px !important;
+    }
     }
 
 
