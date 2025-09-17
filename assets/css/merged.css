@@ -195,13 +195,13 @@ body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overf
 /* Gradient background for containermain only */
 .containermain {
     margin-top: -100px;
-    background: linear-gradient(to bottom, #020117 0%, #274690 55%, #938fcb 100%);
+    background: linear-gradient(to bottom, #020117 0%, #274690 55%, #5650b4 100%);
     
 }
 .containermain2 {
     margin-top: -100px;
     
-    background: linear-gradient(to top, #020117 0%, #274690 55%, #938fcb 100%);
+    background: linear-gradient(to top, #020117 0%, #274690 55%, #5650b4 100%);
     
 }
 /* Responsive tweaks for mobile/tablet only, keep PC design unchanged */
