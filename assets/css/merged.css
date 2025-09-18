@@ -13,11 +13,15 @@
   .container3 {
     display: block!important;
   }
+
 }
 @media (max-width: 991px) {
   .container3 {
     display: none !important;
   }
+    .btnh{
+  display: none !important;
+}
 }
 
 @media (max-width: 991px) {
@@ -70,6 +74,9 @@
 }
 .resizable{
     width: 320px !important;
+}
+.btnh{
+  display: none !important;
 }
 
 
@@ -2478,7 +2485,9 @@ justify-content: space-between;
   .clickablem2{
     display: none !important;
   }
-
+.btnh{
+  display: none !important;
+}
  
 
 
