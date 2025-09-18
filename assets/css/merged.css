@@ -1041,11 +1041,13 @@ body {
 
 .row-img {
     border-radius: 10px;
-  height: 400px;        /* Increased and fixed height */
-  width: 100px;         /* Initial (shrunk) width */
+  height: 500px;        /* Increased and fixed height */
+  width: 150px;         /* Initial (shrunk) width */
   flex: 1 1 0;
   object-fit: cover;    /* Prevent image distortion */
-  transition: flex 0.3s ease, width 0.3s ease;
+  object-position:left center; /* Anchor the visible area to the left */
+  transform-origin: left center; /* Expand from left when hovered */
+  transition: flex 0.8s ease, width 0.5s ease, transform 0.5s ease;
   cursor: pointer;
 }
 
@@ -1053,13 +1055,38 @@ body {
 .row-img:hover {
   flex: 3 1 0;
   width: 300px;         /* Enlarged width */
+  transform: translateX(0); /* ensure anchored expansion */
 }
 
 /* Other images shrink further on hover, but height stays the same */
 .image-row:hover .row-img:not(:hover) {
   flex: 0.7 1 0;
   width: 60px;
+  opacity: 0.95;
+  transform: scaleX(1); /* don't flip or move non-hovered images */
   /* height remains unchanged */
+}
+
+/* Mobile / small screens: keep images natural and avoid hover effects */
+@media (max-width: 768px) {
+  .image-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-top: 40px;
+  }
+  .row-img {
+    height: 300px;
+    width: auto;
+    flex: 0 0 auto;
+    object-position: center center;
+    transition: none;
+  }
+  .row-img:hover,
+  .image-row:hover .row-img:not(:hover) {
+    flex: 0 0 auto;
+    width: auto;
+    transform: none;
+  }
 }
 
 
