@@ -634,4 +634,18 @@ window.addEventListener('resize', () => {
   }, 150);
 });
 
+
+
+
+  window.onload = function() {
+      setTimeout(() => {
+        document.getElementById("popupOverlay").style.display = "flex";
+      }, 5000); // 10 seconds
+    };
+
+    // Close popup on click
+    document.getElementById("closePopup").onclick = function() {
+      document.getElementById("popupOverlay").style.display = "none";
+    };  
+
 // ...existing code...
