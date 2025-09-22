@@ -424,6 +424,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
+// Ensure native lazy-loading is applied to all <img> elements that don't already opt-in.
+// This is appended to avoid editing many HTML files; browsers that support loading attribute will honor it.
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+      img.setAttribute('loading', 'lazy');
+    });
+  } catch (e) {
+    // fail silently in very old browsers
+    console.warn('Lazy load helper failed', e);
+  }
+});
+
+
 
         //slider js
          let currentIndex = 0;
