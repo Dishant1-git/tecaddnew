@@ -1,8 +1,26 @@
 /* Show sticky-slider-section only on small screens, hide on md and up */
-@media (min-width: 992px) {
+@media (min-width: 991px) {
   .sticky-slider-section {
     display: none !important;
   }
+  .sticky-section h1 {
+    position: sticky !important;
+    top: 0px !important;
+}
+.sticky-section img,.sticky-section  a {
+    top: 100px !important;
+    position: sticky !important;
+}
+
+.sticky-section img {
+    position: sticky !important;
+    top: 150px !important;
+    border-radius: 20px;
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
 }
 @media (max-width: 991px) {
   .sticky-slider-section {
