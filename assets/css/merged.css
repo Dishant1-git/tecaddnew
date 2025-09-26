@@ -131,7 +131,7 @@
 /* --- Optimized CSS for main sections (no duplicates) --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overflow-x: hidden; }
-.nav-wrapper { position: fixed; background: #111111a3; color: #fff;z-index: 999; width: 100%; }
+.nav-wrapper { position: fixed; background: #111111a3; color: #fff;z-index: 999; width: 100%;  backdrop-filter: blur(10px);  }
 .nav-container { max-width: 1200px; margin: auto; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 .nav-logo { font-size: 1.5rem; font-weight: bold; color: #3a92ff; }
 .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; flex-direction: row; width: auto;padding-top: 30px; }
@@ -1102,6 +1102,63 @@ body {
   opacity: 0.95;
   transform: scaleX(1); /* don't flip or move non-hovered images */
   /* height remains unchanged */
+}
+
+/* Scroll progress bar at top */
+#scroll-progress-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(0,0,0,0.06);
+  z-index: 9999;
+  pointer-events: none;
+}
+#scroll-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 50%, #4fe0c6 100%);
+  box-shadow: 0 2px 8px rgba(79, 172, 254, 0.35);
+  transition: width 120ms linear;
+}
+
+/* Scroll to top button - modern 3D look */
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ffffff, #e6f7ff);
+  border: none;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18), inset 0 2px 6px rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(12px);
+  transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+}
+.scroll-top .arrow {
+  font-size: 20px;
+  color: #0366d6;
+  filter: drop-shadow(0 2px 0 rgba(255,255,255,0.5));
+}
+.scroll-top:focus { outline: none; box-shadow: 0 0 0 4px rgba(3,102,214,0.12); }
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  box-shadow: 0 12px 26px rgba(3,102,214,0.18), inset 0 4px 10px rgba(255,255,255,0.6);
+}
+
+@media (max-width: 600px) {
+  .scroll-top { right: 16px; bottom: 16px; width: 48px; height: 48px; }
 }
 
 /* Mobile / small screens: keep images natural and avoid hover effects */

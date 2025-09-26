@@ -649,3 +649,73 @@ window.addEventListener('resize', () => {
     };  
 
 // ...existing code...
+
+/* Scroll progress bar and scroll-to-top button behavior */
+(function() {
+  // Wait for DOM to be ready (some pages may not include elements until later)
+  function init() {
+    var progressEl = document.getElementById('scroll-progress');
+    var scrollBtn = document.getElementById('scrollToTop');
+    if (!progressEl || !scrollBtn) return;
+
+    var ticking = false;
+
+    function update() {
+      var scrollY = window.scrollY || window.pageYOffset;
+      var docH = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+      var winH = window.innerHeight || document.documentElement.clientHeight;
+      var maxScroll = docH - winH;
+      var pct = maxScroll > 0 ? Math.min(100, (scrollY / maxScroll) * 100) : 0;
+      progressEl.style.width = pct + '%';
+
+      if (pct > 15 || scrollY > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    // Smooth scroll to top easing
+    function smoothScrollToTop(duration) {
+      duration = duration || 600;
+      var start = window.scrollY || window.pageYOffset;
+      var startTime = performance.now();
+
+      function ease(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function step(now) {
+        var elapsed = now - startTime;
+        var progress = Math.min(1, elapsed / duration);
+        var val = Math.round(start * (1 - ease(progress)));
+        window.scrollTo(0, val);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    scrollBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollToTop(600);
+    });
+
+    // Initialize
+    onScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

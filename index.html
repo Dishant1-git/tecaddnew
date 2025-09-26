@@ -17,6 +17,10 @@
 </head>
 
 <body>
+    <!-- Scroll progress bar (fills as user scrolls) -->
+    <div id="scroll-progress-wrap" aria-hidden="true">
+        <div id="scroll-progress"></div>
+    </div>
 
 
     <div class="overlayy" id="popupOverlay">
@@ -78,7 +82,12 @@
                         <div class="mega-left">
                             <div>
                                 <h4>Software Development</h4>
-                                <p>Understand user needs and habits.</p>
+                                <!-- Scroll to top button -->
+                                <button id="scrollToTop" class="scroll-top" aria-label="Scroll to top">
+                                    <span class="arrow">↑</span>
+                                </button>
+
+                            </body>
                             </div>
                             <div>
                                 <h4>Mobile App Development</h4>
