@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -23,7 +25,7 @@
     </div>
 
 
-     <button id="scrollToTop" class="scroll-top" aria-label="Scroll to top">
+     <button id="scrollToTop" class="scroll-top" aria-label="Scroll to top" >
         
                                     ↑
                                 </button>
@@ -313,9 +315,9 @@
 
 
         <!-- Transformation Section (from banner.html) -->
-        <div class="container">
+        <div class="container"  >
             <section class="transformation-section">
-                <div class="text-content">
+                <div class="text-content" data-aos="fade-right"  data-aos-duration="3000">
                     <h2>We Are Your Turnkey Partners in</h2>
                     <div class="dynamic-text">
                         <span id="changingWord">TRANSFORMATION</span>
@@ -325,13 +327,13 @@
                         with custom software solutions and innovative technologies that lead their industries.
                     </p>
                 </div>
-                <div class="image-box">
+                <div class="image-box"data-aos="fade-left"  data-aos-duration="3000">
                     <img src="assets/images/web-desiging.jpg" class="active" id="img1" loading="lazy">
                     <img src="assets/images/react.jpg" id="img2" loading="lazy">
                     <img src="assets/images/mern_banner.jpg" id="img3" loading="lazy">
                 </div>
             </section>
-            <div class="counters">
+            <div class="counters" data-aos="fade-up"  data-aos-duration="3000">
                 <div class="counter-box">
                     <h3>12+</h3>
                     <p>Years of Experience</p>
@@ -355,7 +357,7 @@
             </div>
         </div>
 
-        <div class="container" id="tushar">
+        <div class="container" id="tushar" data-aos="fade-right"  data-aos-duration="1000"  >
             <div class="controls">
                 <h2>Our Tech Offering-Tailored to<br>Your Time zone and businesses Needs</h2>
                 <div class="btns">
@@ -363,7 +365,7 @@
                     <button id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
-            <div class="slider" id="slider">
+            <div class="slider" id="slider"  >
                 <!-- Section 1 -->
                 <section class="section2">
                     <div class="section-content1">
@@ -454,11 +456,11 @@
 
 
         <!-- Features/Services Section (from features.html) -->
-        <div class="container">
+        <div class="container" data-aos="fade-up"  data-aos-duration="1500">
             <section class="services-section">
 
-                <h1>this is the feature section</h1>
-                <div class="services-grid">
+                <h1 data-aos="fade-right"  data-aos-duration="1000">this is the feature section</h1>
+                <div class="services-grid" data-aos="fade-up"  data-aos-duration="1000">
                     <div class="service-card">
                         <div class="service-icon">💻</div>
                         <div class="service-title">Software Development</div>
@@ -508,18 +510,18 @@
         </div>
 
         <!-- Hover Section (from hoversection.html) -->
-        <div class="container hover1">
+        <div class="container hover1" data-aos="fade-up"  data-aos-duration="2000">
             <section class="hover-services-section">
                 <h1> this is the hover section </h1>
                 <div class="services-container">
-                    <div class="services-menu">
+                    <div class="services-menu" data-aos="fade-right"  data-aos-duration="1000">
                         <div class="menu-item active" data-target="ai">AI-Powered Applications</div>
                         <div class="menu-item" data-target="blockchain">Next-Gen Blockchain</div>
                         <div class="menu-item" data-target="tech">Premium Tech Sphere</div>
                         <div class="menu-item" data-target="gaming">Elite Gaming Studio</div>
                         <div class="menu-item" data-target="ondemand">AI On-Demand Apps</div>
                     </div>
-                    <div class="services-content">
+                    <div class="services-content" data-aos="fade-left"  data-aos-duration="1000">
                         <div class="content-block active" id="ai">
                             <h2>Your Partner in AI Innovation</h2>
                             <p>Helping businesses leverage AI and ML with global expertise and innovative methodologies
@@ -2335,6 +2337,10 @@
     <!-- Collapse/Dropdown powered by bundle [22][18] -->
     <!-- JS moved to assets/js/merged.js -->
 
+
+    <script>
+  AOS.init();
+</script>
 </body>
 
 </html>

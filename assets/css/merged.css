@@ -1450,7 +1450,7 @@ justify-content: space-between;
 
         .container {
             max-width: 1200px;
-            margin: 100px auto;
+            margin: 0px auto;
            padding-top: 100px;
             position: relative;
             z-index: 2;
