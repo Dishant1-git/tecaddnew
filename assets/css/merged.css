@@ -1185,9 +1185,7 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 14px;
-
-  border: none;
-  /* box-shadow: 0 8px 18px rgba(0,0,0,0.18), inset 0 2px 6px rgba(255,255,255,0.6); */
+  border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1197,11 +1195,12 @@ body {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  background:linear-gradient(180deg, #4138dc 0%, #7200fe 50%, #890fcb 100%)
+  background:linear-gradient(130deg, #4138dc 0%, #7200fe 50%, #890fcb 100%)
 }
-.scroll-top .arrow {
-  font-size: 20px;
-  color: #0366d6;
+.scroll-top .arroww {
+  margin: 0px;
+  font-size: 30px;
+  color: white;
   filter: drop-shadow(0 2px 0 rgba(255,255,255,0.5));
 }
 .scroll-top:focus { outline: none; box-shadow: 0 0 0 4px rgba(3,102,214,0.12); }
@@ -1572,7 +1571,9 @@ justify-content: space-between;
             flex-wrap: wrap;
             justify-content: center;
         }
-
+#app{
+  text-align: center;
+}
         .category-tab {
             position: relative;
             display: flex;

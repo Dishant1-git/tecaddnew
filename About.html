@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Docs use this CDN [22] -->
+
+    <link rel="stylesheet" href="assets/css/merged.css">
+
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+     <!-- Scroll progress bar (fills as user scrolls) -->
+    <div id="scroll-progress-wrap" aria-hidden="true">
+        <div id="scroll-progress"></div>
+    </div>
+
+
+     <button id="scrollToTop" class="scroll-top" aria-label="Scroll to top" >
+        
+                                    ↑
+                                </button>
+
+    <div class="overlayy" id="popupOverlay">
+        <div class="popup">
+            <!-- Left Section -->
+            <div class="left">
+                <h2>👋 Hey, Wait a Second!</h2>
+                <p>Before you leave, let our experts help you with a free:</p>
+                <ul>
+                    <li>Custom Development Roadmap</li>
+                    <li>Budget Estimation</li>
+                    <li>Time-To-Market Projection</li>
+                </ul>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right">
+                <div class="close" id="closePopup">×</div>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Business Email" required>
+                    </div>
+                    <div class="form-group phone-input">
+                        <select>
+                            <option value="+91">🇮🇳 +91</option>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+44">🇬🇧 +44</option>
+                        </select>
+                        <input type="text" placeholder="Contact Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Describe Your Project/Idea in Brief"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btnn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mega Menu Navbar -->
+    <nav class="nav-wrapper">
+        <div class="nav-container">
+            <div class="nav-logo"><img src="/assets/images/tce new logo 1 pngcc (1).png" height="30px"></div>
+            <div class="nav-actions">
+
+                <button class="nav-toggle"><i class="fa fa-bars"></i></button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Portfolio</a></li>
+
+                <!-- Services -->
+                <li class="nav-item">
+                    <a href="#" class="nav-toggle-link">Services ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-left">
+                 
+                           <div>  <div class="service-item">
+        <i class="fa-solid fa-code"></i>
+        <div class="service-text">
+          <span class="service-titlee">Software Development</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <div class="service-text">
+          <span class="service-titlee">Mobile App Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-globe"></i>
+        <div class="service-text">
+          <span class="service-titlee">Web App Development</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-link"></i>
+        <div class="service-text">
+          <span class="service-titlee">Blockchain Development Company</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-coins"></i>
+        <div class="service-text">
+          <span class="service-titlee">Cryptocurrency Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <div class="service-text">
+          <span class="service-titlee">MVP Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-building"></i>
+        <div class="service-text">
+          <span class="service-titlee">Enterprise Software Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-pen-ruler"></i>
+        <div class="service-text">
+          <span class="service-titlee">UX/UI Designing</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-brain"></i>
+        <div class="service-text">
+          <span class="service-titlee">AI Development Services</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-user-tie"></i>
+        <div class="service-text">
+          <span class="service-titlee">Hire Software Developers</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-bullhorn"></i>
+        <div class="service-text">
+          <span class="service-titlee">Digital Marketing</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-users-gear"></i>
+        <div class="service-text">
+          <span class="service-titlee">IT Staff Augmentation</span>
+          
+        </div>
+      </div></div>
+                           <div>  <div class="service-item">
+        <i class="fa-solid fa-code"></i>
+        <div class="service-text">
+          <span class="service-titlee">Software Development</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <div class="service-text">
+          <span class="service-titlee">Mobile App Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-globe"></i>
+        <div class="service-text">
+          <span class="service-titlee">Web App Development</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-link"></i>
+        <div class="service-text">
+          <span class="service-titlee">Blockchain Development Company</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-coins"></i>
+        <div class="service-text">
+          <span class="service-titlee">Cryptocurrency Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <div class="service-text">
+          <span class="service-titlee">MVP Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-building"></i>
+        <div class="service-text">
+          <span class="service-titlee">Enterprise Software Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-pen-ruler"></i>
+        <div class="service-text">
+          <span class="service-titlee">UX/UI Designing</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-brain"></i>
+        <div class="service-text">
+          <span class="service-titlee">AI Development Services</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-user-tie"></i>
+        <div class="service-text">
+          <span class="service-titlee">Hire Software Developers</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-bullhorn"></i>
+        <div class="service-text">
+          <span class="service-titlee">Digital Marketing</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-users-gear"></i>
+        <div class="service-text">
+          <span class="service-titlee">IT Staff Augmentation</span>
+          
+        </div>
+      </div></div>
+                           <div>  <div class="service-item">
+        <i class="fa-solid fa-code"></i>
+        <div class="service-text">
+          <span class="service-titlee">Software Development</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <div class="service-text">
+          <span class="service-titlee">Mobile App Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-globe"></i>
+        <div class="service-text">
+          <span class="service-titlee">Web App Development</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-link"></i>
+        <div class="service-text">
+          <span class="service-titlee">Blockchain Development Company</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-coins"></i>
+        <div class="service-text">
+          <span class="service-titlee">Cryptocurrency Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <div class="service-text">
+          <span class="service-titlee">MVP Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-building"></i>
+        <div class="service-text">
+          <span class="service-titlee">Enterprise Software Development</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-pen-ruler"></i>
+        <div class="service-text">
+          <span class="service-titlee">UX/UI Designing</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-brain"></i>
+        <div class="service-text">
+          <span class="service-titlee">AI Development Services</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-user-tie"></i>
+        <div class="service-text">
+          <span class="service-titlee">Hire Software Developers</span>
+          
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-bullhorn"></i>
+        <div class="service-text">
+          <span class="service-titlee">Digital Marketing</span>
+         
+        </div>
+      </div>
+
+      <div class="service-item">
+        <i class="fa-solid fa-users-gear"></i>
+        <div class="service-text">
+          <span class="service-titlee">IT Staff Augmentation</span>
+          
+        </div>
+      </div></div>
+                        </div>
+                        <div class="mega-right">
+                            <img src="https://dummyimage.com/150x200/3a92ff/fff&text=E+Guide" alt="">
+                            <h5>E Guide</h5>
+                            <p><b>App Monetization Strategies:</b><br>How to make money from apps?</p>
+                            <button>Download Now</button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Industries -->
+                <li class="nav-item">
+                    <a href="#" class="nav-toggle-link">Industries ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-left">
+                            <div>
+                                <h4>Finance</h4>
+                                <p>Banking & fintech solutions.</p>
+                            </div>
+                            <div>
+                                <h4>Healthcare</h4>
+                                <p>Digital health services.</p>
+                            </div>
+                            <div>
+                                <h4>Retail</h4>
+                                <p>E-commerce platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Insights</a></li>
+            </ul>
+            <div class="btnh">
+                <button class="btn-primary">Get in Touch</button>
+                <button class="btn-secondary">Reneurs</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="ab-banner">
+
+    </div>
+
+
+    
+
+
+
+     <!-- Bootstrap 5 JS bundle (required for collapse/dropdown). Include ONCE, after HTML. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- External JS for merged sections -->
+    <script src="assets/js/merged.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Collapse/Dropdown powered by bundle [22][18] -->
+    <!-- JS moved to assets/js/merged.js -->
+
+
+    <script>
+  AOS.init();
+</script>
+</body>
+</html>

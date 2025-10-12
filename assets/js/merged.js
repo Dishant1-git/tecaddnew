@@ -719,3 +719,33 @@ window.addEventListener('resize', () => {
     init();
   }
 })();
+
+
+let expp=0
+
+setInterval(()=>{
+  if(expp<12){
+    expp++
+    document.getElementById("exp").innerText=expp+"+"
+  }
+},300)
+
+let served=0
+setInterval(()=>{
+  if(served<25){
+    served++
+    document.getElementById("cserved").innerText=served+"+"
+  }
+},200)
+
+
+let tech=0
+setInterval(()=>{
+  if(tech<300){
+    tech++
+    document.getElementById("techh").innerText=tech+"+"
+  }
+},2)
+
+
+
