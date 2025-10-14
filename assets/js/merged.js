@@ -701,9 +701,59 @@ window.addEventListener('resize', () => {
 (function() {
   // Wait for DOM to be ready (some pages may not include elements until later)
   function init() {
+    // ensure progress and button exist; create fallback elements if necessary
+    var progressWrap = document.getElementById('scroll-progress-wrap');
     var progressEl = document.getElementById('scroll-progress');
     var scrollBtn = document.getElementById('scrollToTop');
-    if (!progressEl || !scrollBtn) return;
+
+    if (!progressWrap) {
+      progressWrap = document.createElement('div');
+      progressWrap.id = 'scroll-progress-wrap';
+      progressWrap.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(progressWrap);
+    }
+
+    if (!progressEl) {
+      progressEl = document.createElement('div');
+      progressEl.id = 'scroll-progress';
+      progressWrap.appendChild(progressEl);
+    }
+
+    if (!scrollBtn) {
+      scrollBtn = document.createElement('button');
+      scrollBtn.id = 'scrollToTop';
+      scrollBtn.className = 'scroll-top';
+      scrollBtn.setAttribute('aria-label', 'Scroll to top');
+      var p = document.createElement('p'); p.className = 'arroww'; p.textContent = '↑';
+      scrollBtn.appendChild(p);
+      document.body.appendChild(scrollBtn);
+    }
+
+    // inline styles to ensure visibility on mobile/debug
+    try {
+      progressWrap.style.position = progressWrap.style.position || 'fixed';
+      progressWrap.style.top = '0';
+      progressWrap.style.left = '0';
+      progressWrap.style.width = '100%';
+      progressWrap.style.height = progressWrap.style.height || '4px';
+      progressWrap.style.background = progressWrap.style.background || 'rgba(0,0,0,0.06)';
+      progressWrap.style.zIndex = progressWrap.style.zIndex || '2147483645';
+      progressWrap.style.pointerEvents = 'none';
+
+      progressEl.style.height = progressEl.style.height || '100%';
+      progressEl.style.width = progressEl.style.width || '0%';
+      progressEl.style.background = progressEl.style.background || 'linear-gradient(90deg, #4facfe 0%, #00f2fe 50%, #4fe0c6 100%)';
+      progressEl.style.boxShadow = progressEl.style.boxShadow || '0 2px 8px rgba(79,172,254,0.35)';
+      progressEl.style.transition = progressEl.style.transition || 'width 120ms linear';
+
+      // ensure button is above overlays and uses safe-area
+      var safeBottom = 'env(safe-area-inset-bottom)';
+      scrollBtn.style.position = 'fixed';
+      scrollBtn.style.right = '12px';
+      scrollBtn.style.bottom = 'calc(' + safeBottom + ' + 12px)';
+      scrollBtn.style.zIndex = '2147483646';
+      scrollBtn.style.transition = 'transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms, opacity 180ms';
+    } catch (e) {}
 
     var ticking = false;
 
@@ -733,8 +783,15 @@ window.addEventListener('resize', () => {
 
       if (show) {
         scrollBtn.classList.add('show');
+        try { scrollBtn.style.opacity = '1'; scrollBtn.style.visibility = 'visible'; } catch(e){}
       } else {
         scrollBtn.classList.remove('show');
+        try { scrollBtn.style.opacity = '0'; scrollBtn.style.visibility = 'hidden'; } catch(e){}
+      }
+
+      // Debug: report current state so user can paste console output
+      if (window.console && console.debug) {
+        console.debug('[scroll-update]', {pct: Math.round(pct), scrollY: Math.round(scrollY), show: show, progressWidth: progressEl.style.width, btnOpacity: scrollBtn.style.opacity});
       }
       ticking = false;
     }
