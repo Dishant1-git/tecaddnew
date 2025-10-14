@@ -715,7 +715,23 @@ window.addEventListener('resize', () => {
       var pct = maxScroll > 0 ? Math.min(100, (scrollY / maxScroll) * 100) : 0;
       progressEl.style.width = pct + '%';
 
-      if (pct > 15 || scrollY > 300) {
+      // Adaptive show threshold: mobile devices should reveal the button earlier
+      var show = false;
+      try {
+        var isMobileWidth = (window.innerWidth || document.documentElement.clientWidth) <= 600;
+        if (isMobileWidth) {
+          // On small screens, show after small scroll or a small percent scrolled
+          var mobileScrollThresh = Math.min(100, Math.round(winH * 0.15));
+          show = (scrollY > mobileScrollThresh) || (pct > 3);
+        } else {
+          // Desktop: keep original behaviour
+          show = (pct > 15) || (scrollY > 300);
+        }
+      } catch (e) {
+        show = (pct > 15) || (scrollY > 300);
+      }
+
+      if (show) {
         scrollBtn.classList.add('show');
       } else {
         scrollBtn.classList.remove('show');
@@ -803,9 +819,9 @@ setInterval(()=>{
   function showContent(index) {
   
     const slides = [
-      { img: 'images/fb logo.png', title: 'AI', desc: 'Our AI helps create smarter apps with personalized recommendations, chatbots, and real-time decisions.' },
-      { img: 'image2.jpg', title: 'Gen AI', desc: 'Generative AI boosts app creativity, content automation, and intelligent interactions.' },
-      { img: 'image3.jpg', title: 'ML', desc: 'Machine learning helps your app learn from data, giving predictive analytics and automation.' },
+      { img: 'assets/images/ai-image.jpg', title: 'AI', desc: 'Our AI helps create smarter apps with personalized recommendations, chatbots, and real-time decisions.' },
+      { img: 'assets/images/artifical-intelligence.jpg', title: 'Gen AI', desc: 'Generative AI boosts app creativity, content automation, and intelligent interactions.' },
+      { img: 'assets/images/ar-vr-1.webp', title: 'ML', desc: 'Machine learning helps your app learn from data, giving predictive analytics and automation.' },
       { img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=680&q=80', title: 'IoT', desc: 'IoT connects your app with real-world devices for data and automation.' },
       { img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=680&q=80', title: 'Cloud', desc: 'Cloud scales your app, ensuring global access and resilience.' }
     ];

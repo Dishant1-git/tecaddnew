@@ -1215,6 +1215,12 @@ body {
   .scroll-top { right: 16px; bottom: 16px; width: 48px; height: 48px; }
 }
 
+/* Ensure scroll progress and button sit above mobile overlays */
+@media (max-width: 600px) {
+  #scroll-progress-wrap { z-index: 100000 !important; }
+  .scroll-top { z-index: 100001 !important; }
+}
+
 /* Mobile / small screens: keep images natural and avoid hover effects */
 @media (max-width: 768px) {
   .image-row {
