@@ -6,23 +6,30 @@
     const slides = document.querySelectorAll(".slidee ");
 const heading = document.getElementById("sliderHeading");
 
-let current = 0;
-const changeSlide = () => {
-  // remove active
-  slides[current].classList.remove("is-active");
+// Guarded slider: only run if required elements exist
+if (slides && slides.length > 0 && heading) {
+  let current = 0;
+  const changeSlide = () => {
+    // remove active if exists
+    if (slides[current] && slides[current].classList)
+      slides[current].classList.remove("is-active");
 
-  // move to next
-  current = (current + 1) % slides.length;
+    // move to next
+    current = (current + 1) % slides.length;
 
-  // add active
-  slides[current].classList.add("is-active");
+    // add active
+    if (slides[current] && slides[current].classList)
+      slides[current].classList.add("is-active");
 
-  // update heading
-  heading.textContent = slides[current].dataset.heading;
-};
+    // update heading if dataset present
+    if (slides[current] && slides[current].dataset && typeof slides[current].dataset.heading !== 'undefined') {
+      heading.textContent = slides[current].dataset.heading;
+    }
+  };
 
-// Auto-change every 4 seconds
-setInterval(changeSlide, 4000);
+  // Auto-change every 4 seconds
+  setInterval(changeSlide, 4000);
+}
 
 
 
@@ -172,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// JS for transformation section (banner.html)
+// JS for transformation section (banner.html) - guarded
 const words = ["TRANSFORMATION", "INNOVATION", "EXCELLENCE"];
 const images = [
   document.getElementById("img1"),
@@ -181,16 +188,18 @@ const images = [
 ];
 const wordSpan = document.getElementById("changingWord");
 let index = 0;
-if (wordSpan && images.length) {
+if (wordSpan && images && images.some(img => img !== null)) {
   setInterval(() => {
     index = (index + 1) % words.length;
-    wordSpan.style.transform = "translateY(-100%)";
+    if (wordSpan.style) wordSpan.style.transform = "translateY(-100%)";
     setTimeout(() => {
-      wordSpan.textContent = words[index];
-      wordSpan.style.transform = "translateY(0)";
+      if (wordSpan) {
+        wordSpan.textContent = words[index];
+        if (wordSpan.style) wordSpan.style.transform = "translateY(0)";
+      }
     }, 300);
-    images.forEach(img => img.classList.remove("active"));
-    images[index].classList.add("active");
+    images.forEach(img => { if (img && img.classList) img.classList.remove("active"); });
+    if (images[index] && images[index].classList) images[index].classList.add("active");
   }, 3000);
 }
 
@@ -425,66 +434,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-        //slider js
-         let currentIndex = 0;
-    const slider = document.getElementById("slider");
-    const sections = slider.children;
-    const totalSections = sections.length;
+                //slider js (guarded)
+                 (function(){
+                   const slider = document.getElementById("slider");
+                   if (!slider) return;
+                   let currentIndex = 0;
+                   const sections = slider.children;
+                   const totalSections = sections.length || 0;
 
-    // Clone first section
-    const firstClone = sections[0].cloneNode(true);
-    slider.appendChild(firstClone);
+                   if (totalSections === 0) return;
 
-    function updateSlider() {
-      slider.style.transition = "transform 0.8s ease";
-      slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
-    }
+                   // Clone first section if exists
+                   if (sections[0]) {
+                     const firstClone = sections[0].cloneNode(true);
+                     slider.appendChild(firstClone);
+                   }
 
-    // Auto slide
-    let autoSlide = setInterval(nextSlide, 3000);
+                   function updateSlider() {
+                     slider.style.transition = "transform 0.8s ease";
+                     slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+                   }
 
-    function nextSlide() {
-      currentIndex++;
-      updateSlider();
+                   // Auto slide
+                   let autoSlide = setInterval(nextSlide, 3000);
 
-      if (currentIndex === totalSections) {
-        setTimeout(() => {
-          slider.style.transition = "none";
-          currentIndex = 0;
-          slider.style.transform = `translateX(0)`;
-          setTimeout(() => {
-            slider.style.transition = "transform 0.8s ease";
-          }, 50);
-        }, 800);
-      }
-    }
+                   function nextSlide() {
+                     currentIndex++;
+                     updateSlider();
 
-    function prevSlide() {
-      if (currentIndex === 0) {
-        currentIndex = totalSections - 1;
-        slider.style.transition = "none";
-        slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
-        setTimeout(() => {
-          slider.style.transition = "transform 0.8s ease";
-        }, 50);
-      } else {
-        currentIndex--;
-        updateSlider();
-      }
-    }
+                     if (currentIndex === totalSections) {
+                       setTimeout(() => {
+                         slider.style.transition = "none";
+                         currentIndex = 0;
+                         slider.style.transform = `translateX(0)`;
+                         setTimeout(() => {
+                           slider.style.transition = "transform 0.8s ease";
+                         }, 50);
+                       }, 800);
+                     }
+                   }
 
-    // Buttons
-    document.getElementById("nextBtn").addEventListener("click", () => {
-      clearInterval(autoSlide);
-      nextSlide();
-      autoSlide = setInterval(nextSlide, 3000); // restart auto
-    });
+                   function prevSlide() {
+                     if (currentIndex === 0) {
+                       currentIndex = totalSections - 1;
+                       slider.style.transition = "none";
+                       slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+                       setTimeout(() => {
+                         slider.style.transition = "transform 0.8s ease";
+                       }, 50);
+                     } else {
+                       currentIndex--;
+                       updateSlider();
+                     }
+                   }
 
-    document.getElementById("prevBtn").addEventListener("click", () => {
-      clearInterval(autoSlide);
-      prevSlide();
-      autoSlide = setInterval(nextSlide, 3000); // restart auto
-    });
+                   // Buttons (guarded)
+                   const nextBtn = document.getElementById("nextBtn");
+                   const prevBtn = document.getElementById("prevBtn");
+                   if (nextBtn) {
+                     nextBtn.addEventListener("click", () => {
+                       clearInterval(autoSlide);
+                       nextSlide();
+                       autoSlide = setInterval(nextSlide, 3000); // restart auto
+                     });
+                   }
+                   if (prevBtn) {
+                     prevBtn.addEventListener("click", () => {
+                       clearInterval(autoSlide);
+                       prevSlide();
+                       autoSlide = setInterval(nextSlide, 3000); // restart auto
+                     });
+                   }
+                 })();
 
 
 /* Clocks script (same as before) */
@@ -612,11 +633,21 @@ function drawClock(canvas, tz, timeEl) {
 
 /* ===== Init all clocks ===== */
 const timers = [];
-timers.push(drawClock(document.getElementById('uae'), 'Asia/Dubai',      'uae-time'));
-timers.push(drawClock(document.getElementById('usa'), 'America/New_York','usa-time'));
-timers.push(drawClock(document.getElementById('uk'),  'Europe/London',   'uk-time'));
-timers.push(drawClock(document.getElementById('sg'),  'Asia/Singapore',  'sg-time'));
-timers.push(drawClock(document.getElementById('au'),  'Australia/Sydney','au-time'));
+// Only initialize clocks if corresponding canvas elements exist
+['uae','usa','uk','sg','au'].forEach((id) => {
+  const canvas = document.getElementById(id);
+  if (canvas) {
+    const tzMap = {
+      'uae':'Asia/Dubai',
+      'usa':'America/New_York',
+      'uk':'Europe/London',
+      'sg':'Asia/Singapore',
+      'au':'Australia/Sydney'
+    };
+    const tz = tzMap[id];
+    timers.push(drawClock(canvas, tz, id + '-time'));
+  }
+});
 
 // Re-render at new sizes on resize
 let resizeTO;
@@ -626,11 +657,20 @@ window.addEventListener('resize', () => {
     timers.forEach(id => clearInterval(id));
     // re-init with new CSS sizes
     timers.length = 0;
-    timers.push(drawClock(document.getElementById('uae'), 'Asia/Dubai',      'uae-time'));
-    timers.push(drawClock(document.getElementById('usa'), 'America/New_York','usa-time'));
-    timers.push(drawClock(document.getElementById('uk'),  'Europe/London',   'uk-time'));
-    timers.push(drawClock(document.getElementById('sg'),  'Asia/Singapore',  'sg-time'));
-    timers.push(drawClock(document.getElementById('au'),  'Australia/Sydney','au-time'));
+    ['uae','usa','uk','sg','au'].forEach((id) => {
+      const canvas = document.getElementById(id);
+      if (canvas) {
+        const tzMap = {
+          'uae':'Asia/Dubai',
+          'usa':'America/New_York',
+          'uk':'Europe/London',
+          'sg':'Asia/Singapore',
+          'au':'Australia/Sydney'
+        };
+        const tz = tzMap[id];
+        timers.push(drawClock(canvas, tz, id + '-time'));
+      }
+    });
   }, 150);
 });
 
@@ -639,14 +679,21 @@ window.addEventListener('resize', () => {
 
   window.onload = function() {
       setTimeout(() => {
-        document.getElementById("popupOverlay").style.display = "flex";
-      }, 5000); // 10 seconds
+        var popupEl = document.getElementById("popupOverlay");
+        if (popupEl) {
+          popupEl.style.display = "flex";
+        }
+      }, 5000);
     };
 
-    // Close popup on click
-    document.getElementById("closePopup").onclick = function() {
-      document.getElementById("popupOverlay").style.display = "none";
-    };  
+    // Close popup on click (guarded)
+    var closeBtn = document.getElementById("closePopup");
+    if (closeBtn) {
+      closeBtn.onclick = function() {
+        var popupEl = document.getElementById("popupOverlay");
+        if (popupEl) popupEl.style.display = "none";
+      };
+    }
 
 // ...existing code...
 
@@ -726,7 +773,8 @@ let expp=0
 setInterval(()=>{
   if(expp<12){
     expp++
-    document.getElementById("exp").innerText=expp+"+"
+    const expEl = document.getElementById("exp");
+    if (expEl) expEl.innerText = expp+"+";
   }
 },300)
 
@@ -734,7 +782,8 @@ let served=0
 setInterval(()=>{
   if(served<25){
     served++
-    document.getElementById("cserved").innerText=served+"+"
+    const servedEl = document.getElementById("cserved");
+    if (servedEl) servedEl.innerText = served+"+";
   }
 },200)
 
@@ -743,9 +792,27 @@ let tech=0
 setInterval(()=>{
   if(tech<300){
     tech++
-    document.getElementById("techh").innerText=tech+"+"
+    const techEl = document.getElementById("techh");
+    if (techEl) techEl.innerText = tech+"+";
   }
 },2)
 
 
 
+
+  function showContent(index) {
+  
+    const slides = [
+      { img: 'images/fb logo.png', title: 'AI', desc: 'Our AI helps create smarter apps with personalized recommendations, chatbots, and real-time decisions.' },
+      { img: 'image2.jpg', title: 'Gen AI', desc: 'Generative AI boosts app creativity, content automation, and intelligent interactions.' },
+      { img: 'image3.jpg', title: 'ML', desc: 'Machine learning helps your app learn from data, giving predictive analytics and automation.' },
+      { img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=680&q=80', title: 'IoT', desc: 'IoT connects your app with real-world devices for data and automation.' },
+      { img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=680&q=80', title: 'Cloud', desc: 'Cloud scales your app, ensuring global access and resilience.' }
+    ];
+    const slide = slides[index];
+    document.getElementById('slider-img').src = slide.img;
+    document.getElementById('slider-title').textContent = slide.title;
+    document.getElementById('slider-desc').textContent = slide.desc;
+  }
+  // initialize first content active
+  showContent(0);
