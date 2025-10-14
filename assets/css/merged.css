@@ -1221,11 +1221,11 @@ body {
   .scroll-top { z-index: 100001 !important; }
 }
 
-/* DEBUG: force visible on mobile to detect overlay vs JS issue - remove after confirmation */
+
 @media (max-width: 600px) {
   .scroll-top { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
   .scroll-top { right: 12px !important; bottom: 12px !important; }
-  #scroll-progress-wrap { top: 0; left: 0; right: 0; height: 4px; }
+  #scroll-progress-wrap { top: 0 !important; left: 0 !important; right: 0 !important; height: 4px !important; }
 }
 
 /* Mobile / small screens: keep images natural and avoid hover effects */
