@@ -24643,7 +24643,7 @@ ul.testimonial-thumb-wrapper li a.active .thumb img {
   background: -webkit-gradient(linear, left top, right top, from(#fff), to(hsla(0, 0%, 100%, 0)));
   background: -webkit-linear-gradient(left, #fff, hsla(0, 0%, 100%, 0));
   background: -moz-linear-gradient(left, #fff 0, hsla(0, 0%, 100%, 0) 100%);
-  background: linear-gradient(90deg, #fff 0, hsla(0, 0%, 100%, 0));
+  background: linear-gradient(90deg, #444ca6be 0%, #444ca658 70%, hsla(0, 0%, 100%, 0));
   z-index: 2;
   content: "";
 }
@@ -24722,7 +24722,7 @@ ul.testimonial-thumb-wrapper li a.active .thumb img {
   position: relative;
   padding: 50px 40px;
   z-index: 2;
-  background: var(--color-white);
+ background-color: #444ca6;
   border-radius: var(--radius);
   box-shadow: var(--shadow-9);
 }
