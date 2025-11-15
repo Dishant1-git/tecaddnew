@@ -38,6 +38,85 @@
     <link rel="stylesheet" href="assets/assets/css/styles.css">
 </head>
 
+<style>
+     .fetu-section {
+            background: var(--gradient-light);
+        }
+        
+        .fetu-title {
+            font-size: 4rem;
+            color: White;
+            margin-bottom: 20px;
+        }
+        
+        .fetu-box {
+            background: #2c86d8;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .fetu-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.694);
+        }
+        
+        .fetu-icon {
+            color:white;
+            font-size: 24px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        
+        .fetu-box h5 {
+            margin: 0 0 8px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .fetu-box p {
+            margin: 0;
+            font-size: 14px;
+            color: rgb(223, 222, 222);
+        }
+        
+        .fetu-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+            border-radius: 40px;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,123,255,0.25);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .fetu-btn:hover {
+            background: linear-gradient(135deg, #0056b3, #00a2ff);
+            transform: translateY(-3px);
+            color: white;
+        }
+        
+        .fetu-img-frame img {
+            border-radius: 16px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .fetu-img-frame img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(0,123,255,0.2);
+        }
+        
+</style>
+
 <body>
     <div id="scroll-progress-wrap" aria-hidden="true">
         <div id="scroll-progress"></div>
@@ -480,6 +559,69 @@
             </div>
         </div>
 
+
+
+         <section class="fetu-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fetu-title">
+                        Why Choose Our Blockchain Development Course
+                    </h2>
+                    <p class=" mb-4" style="color: white;">
+                        Join our <strong>Blockchain Development Industrial Training</strong> program in 
+                        <strong>Ludhiana</strong> and gain hands-on expertise with live projects, 
+                        modern tools, and real-world decentralized technologies. Learn to build, deploy, and manage 
+                        scalable decentralized applications (dApps) like a pro.
+                    </p>
+
+                    <div class="fetu-list">
+                        <div class="fetu-box">
+                            <i class="fa-solid fa-laptop-code fetu-icon"></i>
+                            <div>
+                                <h5>Hands-on Live Projects</h5>
+                                <p>Build real-world dApps and Smart Contracts guided by industry experts in Ludhiana.</p>
+                            </div>
+                        </div>
+
+                        <div class="fetu-box">
+                            <i class="fa-solid fa-layer-group fetu-icon"></i>
+                            <div>
+                                <h5>Modern Tech Stack</h5>
+                                <p>Master Solidity, Ethereum, Web3.js, Truffle, and more with Ludhiana's best trainers.</p>
+                            </div>
+                        </div>
+
+                        <div class="fetu-box">
+                            <i class="fa-solid fa-briefcase fetu-icon"></i>
+                            <div>
+                                <h5>Internship & Placement Support</h5>
+                                <p>Get internship opportunities and career guidance from Ludhiana's top IT companies.</p>
+                            </div>
+                        </div>
+
+                        <div class="fetu-box">
+                            <i class="fa-solid fa-certificate fetu-icon"></i>
+                            <div>
+                                <h5>Certified Program</h5>
+                                <p>Receive an industry-recognized certificate from Ludhiana's premier IT institute.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact_us.php" class="fetu-btn">Join Now in Ludhiana</a>
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <div class="fetu-img-frame">
+                        <img src="assets/images/blockchain-training-ludhiana.jpg" 
+                             alt="Blockchain Development Industrial Training in Ludhiana - TechCadd" 
+                             class="img-fluid rounded-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <section class="expertise-card">
             <div class="expertise-text">
