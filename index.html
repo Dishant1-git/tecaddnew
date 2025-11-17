@@ -1355,6 +1355,81 @@
             </div>
         </div>
 
+
+        <style>
+             .faq-container {
+
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: 15px;
+
+                }
+
+                .faq-item {
+
+                    border-radius: 12px;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    border: 1px solid grey;
+
+                }
+
+                .faq-header {
+                    padding: 5px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 12px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: white;
+                }
+
+                .faq-header:hover {
+                    background: #10294f;
+                    color: white;
+                }
+
+                #kaushal {
+                    height: 80px;
+                    width: 100px;
+                }
+
+                .faq-header .arrow {
+                    margin-right: 10px;
+                    font-size: 15px;
+                    transition: transform 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    position: static;
+                    padding-top: 2px;
+                    margin-top: 15px;
+                }
+
+                .faq-content {
+                    max-height: 0;
+                    overflow: hidden;
+                    padding: 0 5px;
+                    background: #112b52;
+                    color: white;
+                    line-height: 1.6;
+                    font-size: 15px;
+                    transition: max-height 0.4s ease, padding 0.3s ease;
+                }
+
+                .faq-item.active .faq-content {
+                    max-height: 400px;
+                    padding: 5px;
+                }
+
+                .faq-item.active .arrow {
+                    transform: rotate(180deg);
+                }
+
+        </style>
         <!-- FAQ Section (from faq.html) -->
         <div class="container">
             <h1>This is the faq section</h1>
