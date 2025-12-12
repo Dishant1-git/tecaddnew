@@ -133,7 +133,7 @@
   --color-primary-100: #323F92;
   --color-heading: #192335;
   --color-body: #6b7385;
-  --color-white: #ffffff;
+ 
   --color-white-off: #FFFFFFAB;
   --color-bodyest: #273041;
   --color-bodyest-2: #324059b3;
@@ -691,7 +691,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  word-break: break-word;
+
   font-family: var(--font-secondary);
   line-height: 1.4074;
   color: white;
@@ -717,8 +717,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: var(--h4);
-  line-height: 1.25;
+
 }
 
 h5,
@@ -1069,7 +1068,7 @@ ul.liststyle.bullet li+li {
 ul li {
   margin-top: 10px;
   margin-bottom: 10px;
-  color: var(--color-body);
+ 
 }
 
 ul li a {
@@ -9472,7 +9471,7 @@ select {
   line-height: 28px;
   padding: 10px 20px;
   outline: none;
-  color: var(--color-body);
+
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -9502,9 +9501,9 @@ textarea {
   box-shadow: none;
   padding: 0 15px;
   outline: none;
-  border: var(--border-width) solid var(--color-border);
+ 
   border-radius: var(--radius);
-  color: var(--color-body);
+
   box-shadow: var(--shadow-10);
   /* -- Placeholder -- */
 }
@@ -24643,7 +24642,7 @@ ul.testimonial-thumb-wrapper li a.active .thumb img {
   background: -webkit-gradient(linear, left top, right top, from(#fff), to(hsla(0, 0%, 100%, 0)));
   background: -webkit-linear-gradient(left, #fff, hsla(0, 0%, 100%, 0));
   background: -moz-linear-gradient(left, #fff 0, hsla(0, 0%, 100%, 0) 100%);
-  background: linear-gradient(90deg, #444ca6be 0%, #444ca658 70%, hsla(0, 0%, 100%, 0));
+  background: linear-gradient(90deg, #00030a 0%, #010636a6 70%, hsl(0deg 0% 100% / 0%));
   z-index: 2;
   content: "";
 }
@@ -37186,7 +37185,7 @@ Course Sidebar
 --------------------------*/
 .rbt-address {
   padding: 40px;
-  background: var(--color-white);
+ 
   padding-bottom: 50px;
   transition: 0.3s;
   border-radius: var(--radius);
@@ -37217,7 +37216,7 @@ Course Sidebar
 }
 
 .rbt-address .icon {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   border-radius: 100%;
   font-size: 33px;
   display: inline-block;

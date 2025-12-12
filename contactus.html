@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Header</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Docs use this CDN [22] -->
+
+    <link rel="stylesheet" href="assets/css/merged.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <link rel="stylesheet" href="assets/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/sal.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/feather.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/euclid-circulara.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/animation.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/magnigy-popup.min.css">
+    <link rel="stylesheet" href="assets/assets/assets/css/plugins/plyr.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/jodit.min.css">
+
+    <link rel="stylesheet" href="assets/assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Scroll progress bar (fills as user scrolls) -->
+    <div id="scroll-progress-wrap" aria-hidden="true">
+        <div id="scroll-progress"></div>
+    </div>
+
+
+    <button id="scrollToTop" class="scroll-top" aria-label="Scroll to top">
+
+        <p class="arroww"> ↑</p>
+    </button>
+
+    
+
+    <!-- Mega Menu Navbar -->
+    <nav class="nav-wrapper">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="index.html"><img src="/assets/images/tce new logo 1 pngcc (1).png"
+                        style="height: 30px;"></a></div>
+            <div class="nav-actions">
+
+                <button class="nav-toggle"><i class="fa fa-bars"></i></button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+
+                <!-- Services -->
+                <li class="nav-item">
+                    <a href="#" class="nav-toggle-link">Services ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-left">
+
+                            <div>
+                                <a href="coursetry.html">
+                                <div class="service-item">
+                                    <i class="fa-solid fa-code"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Software Development</span>
+
+                                    </div>
+                                </div></a>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Mobile App Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Web App Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-link"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Blockchain Development Company</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Cryptocurrency Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">MVP Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-building"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Enterprise Software Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">UX/UI Designing</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-brain"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">AI Development Services</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Hire Software Developers</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Digital Marketing</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">IT Staff Augmentation</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="service-item">
+                                    <i class="fa-solid fa-code"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Software Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Mobile App Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Web App Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-link"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Blockchain Development Company</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Cryptocurrency Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">MVP Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-building"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Enterprise Software Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">UX/UI Designing</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-brain"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">AI Development Services</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Hire Software Developers</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Digital Marketing</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">IT Staff Augmentation</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="service-item">
+                                    <i class="fa-solid fa-code"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Software Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Mobile App Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Web App Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-link"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Blockchain Development Company</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-coins"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Cryptocurrency Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">MVP Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-building"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Enterprise Software Development</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">UX/UI Designing</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-brain"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">AI Development Services</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Hire Software Developers</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">Digital Marketing</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="service-item">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                    <div class="service-text">
+                                        <span class="service-titlee">IT Staff Augmentation</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-right">
+                            <img src="https://dummyimage.com/150x200/3a92ff/fff&text=E+Guide" alt="">
+                            <h5>E Guide</h5>
+                            <p><b>App Monetization Strategies:</b><br>How to make money from apps?</p>
+                            <button>Download Now</button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Industries -->
+                <li class="nav-item">
+                    <a href="#" class="nav-toggle-link">Industries ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-left">
+                            <div>
+                                <h4>Finance</h4>
+                                <p>Banking & fintech solutions.</p>
+                            </div>
+                            <div>
+                                <h4>Healthcare</h4>
+                                <p>Digital health services.</p>
+                            </div>
+                            <div>
+                                <h4>Retail</h4>
+                                <p>E-commerce platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="#">Insights</a></li>
+            </ul>
+            <div class="btnh">
+                <button class="btn-primary">Get in Touch</button>
+                <button class="btn-secondary">Reneurs</button>
+            </div>
+
+        </div>
+    </nav>
+    <style>
+       
+    </style>
+
+    <div class="rbt-conatct-area containermain rbt-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center mb--60">
+                        <span class="subtitle bg-secondary-opacity">Contact Us</span>
+                        <h2 class="title">Histudy Course Contact <br> can join with us.</h2>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate bg" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                    <div class="rbt-address">
+                        <div class="icon">
+                            <i class="feather-headphones"></i>
+                        </div>
+                        <div class="inner">
+                            <h4 class="title">Contact Phone Number</h4>
+                            <p ><a href="tel:+444555666777" class="text-dark"  >+444 555 666 777</a></p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate bg" data-sal="slide-up" data-sal-delay="200" data-sal-duration="800">
+                    <div class="rbt-address">
+                        <div class="icon">
+                            <i class="feather-mail"></i>
+                        </div>
+                        <div class="inner">
+                            <h4 class="title">Our Email Address</h4>
+                            <p><a href="mailto:admin@gmail.com" class="text-dark">admin@gmail.com</a></p>
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate bg" data-sal="slide-up" data-sal-delay="250" data-sal-duration="800">
+                    <div class="rbt-address">
+                        <div class="icon">
+                            <i class="feather-map-pin"></i>
+                        </div>
+                        <div class="inner">
+                            <h4 class="title">Our Location</h4>
+                            <p>5678 Bangla Main Road, cities 580 <br> GBnagla, example 54786</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="containermain2">
+
+
+    <style>
+
+
+
+        .consult-rightt .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #1e90ff;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+    </style>
+<div class="container ">
+    
+
+    <div class="rbt-contact-address">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="thumbnail">
+                        <img class="w-100 radius-6" src="assets/images/about/contact.jpg" alt="Contact Images">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="rbt-contact-form consult-rightt contact-form-style-1 max-width-auto">
+                        <div class="section-title text-start">
+                            <span class="subtitle bg-primary-opacity">EDUCATION FOR EVERYONE</span>
+                        </div>
+                        <h3 class="title">Get a Free Course You Can Contact With Me</h3>
+                        <form id="contact-form" method="POST" action="mail.php" class="rainbow-dynamic-form max-width-auto">
+                            <div class="form-group mt-5">
+                                <label>Name</label>
+                                <input name="contact-name" id="contact-name" type="text">
+                                
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="form-group mt-3">
+                                 <label>Email</label>
+                                <input name="contact-phone" type="email">
+                               
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="form-group mt-3">
+                                  <label>Your Subject</label>
+                                <input type="text" id="subject" name="subject">
+                              
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="form-group">
+                                  <label>Message</label>
+                                <textarea name="contact-message" id="contact-message"></textarea>
+                              
+                                <span class="focus-border"></span>
+                            </div>
+                            <div class="form-submit-group mt-5">
+                                <button name="submit" type="submit" id="submit" class="rbt-btn btn-md btn-gradient hover-icon-reverse w-100">
+                                    <span class="icon-reverse-wrapper">
+                                        <span class="btn-text">GET IT NOW</span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rbt-google-map  rbt-section-gapTop">
+        <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319" height="600" style="border:0"></iframe>
+    </div>
+</div>
+</div>
+         <footer>
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <img src="/assets/images/tce new logo 1 pngcc (1).png" height="30px">
+                    <p>Ready to transform your business digitally?</p>
+                    <a href="#" class="contact-btn">Contact Now!</a>
+                    <p><strong>For sales enquiries:</strong><br>sales@apptunix.com</p>
+                    <img src="https://www.dmca.com/img/dmca-badge-w100-5x1-01.png" width="120">
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h3>Recent e-guides</h3>
+                    <a href="#">App Monetization Strategies: How to Make Money From an App?</a>
+                    <a href="#">A Comprehensive Guide To Mobile App Development in 2025 – 2026</a>
+                    <a href="#">Telemedicine 2.0 – A Comprehensive Guide On What Healthcare Providers Need To Know?</a>
+                    <a href="#">Electric Vehicle Software Development – A Comprehensive Guide</a>
+                    <a href="#">How to Enhance the UX of a Mobile App with Design Thinking</a>
+                    <a href="#">Artificial Intelligence (AI) – The Next Big Thing in Logistics</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <a href="#">App Development Services</a>
+                    <a href="#">AI Development Services</a>
+                    <a href="#">Software Development Services</a>
+                    <a href="#">Web App Development</a>
+                    <a href="#">Hire Software Developers</a>
+                    <a href="#">Hire App Developers</a>
+                    <a href="#">Digital Marketing Services</a>
+                    <a href="#">Mobile App Development Dubai</a>
+                    <a href="#">Mobile App Development KSA</a>
+                    <a href="#">Mobile App Development UK</a>
+                    <a href="#">Mobile App Development Australia</a>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-col">
+                    <h3>Expertise</h3>
+                    <a href="#">White Label App Development</a>
+                    <a href="#">Ecommerce App Development</a>
+                    <a href="#">Blockchain App Development</a>
+                    <a href="#">Fintech App Development</a>
+                    <a href="#">AR / VR App Development</a>
+                    <a href="#">Food Delivery App Development</a>
+                    <a href="#">Grocery Delivery App Development</a>
+                    <a href="#">Taxi Booking App Development</a>
+                    <a href="#">Fitness App Development</a>
+                    <a href="#">Sports Betting Development</a>
+                    <a href="#">Healthcare App Development</a>
+                </div>
+                <div class="footer-col">
+                    <h3 style="margin-top:20px;">Subscribe US</h3>
+                    <p>Make the right business move.</p>
+                    <div class="subscribe-box">
+                        <input type="email" placeholder="Email address">
+                        <button>Send</button>
+                    </div>
+                    <small>Your email ID is confidential.</small>
+
+                    <div class="social-icons">
+                        <a href="#"> <i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </footer>
+
+
+     
+
+
+
+
+    </div>
+
+    <!-- Bootstrap 5 JS bundle (required for collapse/dropdown). Include ONCE, after HTML. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- External JS for merged sections -->
+    <script src="assets/js/merged.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Collapse/Dropdown powered by bundle [22][18] -->
+    <!-- JS moved to assets/js/merged.js -->
+
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

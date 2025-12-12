@@ -117,7 +117,7 @@
 /* --- Optimized CSS for main sections (no duplicates) --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overflow-x: hidden; }
-.nav-wrapper { position: fixed; background: #111111a3; color: #fff;z-index: 999; width: 100%;  backdrop-filter: blur(10px);  }
+.nav-wrapper { position: fixed;top:0px; background: #111111a3; color: #fff;z-index: 999; width: 100%;  backdrop-filter: blur(10px);  }
 .nav-container { max-width: 1200px; margin: auto; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 .nav-logo { font-size: 1.5rem; font-weight: bold; color: #3a92ff; }
 .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; flex-direction: row; width: auto;padding-top: 30px; }
@@ -165,7 +165,7 @@ body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #fff; overf
     .nav-toggle { display: block; }
     .hero { min-height: 100vh; }
     .hero-video { min-height: 80vh; }
-    .hero .container { min-height: 80vh; }
+    .hero .container { min-height: 80vh;overflow: hidden; }
     .containermain { margin-top: 0; border-radius: 0; box-shadow: none; }
 }
 
@@ -522,7 +522,7 @@ body {
 /* Transformation Section */
 .transformation-section {
     display: flex;
-   
+   overflow: hidden;
     justify-content: space-between;
    
     gap: 60px;
@@ -530,6 +530,7 @@ body {
 
 .text-content {
     flex: 1.2;
+    overflow: hidden;
 }
 
 .text-content h2 {
@@ -600,7 +601,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
- 
+ overflow: hidden;
     gap: 20px;
 }
 
@@ -1223,7 +1224,7 @@ body {
       margin: 0 auto 15px;
       display: flex; 
       flex-direction: column;
-      justify-content: space-between; align-items: center;
+      justify-content: center; align-items: center;
       padding: 20px; box-sizing: border-box;
       color: #000; font-size: 14px; position: relative; overflow: hidden;
     }
@@ -1336,6 +1337,7 @@ justify-content: space-between;
            padding-top: 100px;
             position: relative;
             z-index: 2;
+            overflow: hidden;
         }
 
         /* Section Header */
@@ -1698,7 +1700,9 @@ justify-content: space-between;
 
 
         
-
+.wall-section{
+  overflow: hidden;
+}
     .wall-section h2 {
       font-size: 2.2rem;
       font-weight: bold;
@@ -1827,7 +1831,7 @@ justify-content: space-between;
       gap: 20px;
     }
 
-    .card {
+    .carddd {
       background: #141c26;
       border-radius: 16px;
       overflow: hidden;
@@ -1838,13 +1842,19 @@ justify-content: space-between;
       border: 1px solid rgba(255, 255, 255, 0.1); /* Thin light border */
     }
 
-    .card:hover {
+    .cardd:hover {
       transform: translateY(-8px);
       border-color: rgba(255, 255, 255, 0.3); /* Lighter glow on hover */
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
-    .card img {
+    .carddd:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.3); /* Lighter glow on hover */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .carddd img {
       width: 100%;
       border-radius: 12px;
       margin-bottom: 15px;
@@ -1904,10 +1914,14 @@ justify-content: space-between;
       color: #0e73f6;
     }
 
+    .consult-right .form-group input,select,textarea{
+      color: white;
+    }
 
 
      .slider-container {
       padding: 40px 20px;
+      overflow: hidden;
     
     }
 
@@ -2061,9 +2075,10 @@ justify-content: space-between;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      overflow: hidden;
     }
 
-    .card {
+    .cardd {
       background: #0f4a92;
       border-radius: 15px;
       overflow: hidden;
@@ -2073,7 +2088,7 @@ justify-content: space-between;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
-    .card img {
+    .cardd img {
       width: 100%;
       height: 180px;
       object-fit: cover;
@@ -2114,7 +2129,7 @@ justify-content: space-between;
 
     /* Responsive Tweaks */
     @media (max-width: 1024px) {
-      .card img {
+      .cardd img {
         height: 160px;
       }
     }
@@ -2123,7 +2138,7 @@ justify-content: space-between;
       .industries {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       }
-      .card img {
+      .cardd img {
         height: 150px;
       }
     }
@@ -2132,7 +2147,7 @@ justify-content: space-between;
       .industries {
         grid-template-columns: 1fr;
       }
-      .card img {
+      .cardd img {
         height: 140px;
       }
     }
@@ -2620,11 +2635,11 @@ justify-content: space-between;
       font-weight: bold;
     }
 
-    .form-group {
+    .right .form-group {
       margin-bottom: 15px;
     }
 
-    .form-group input, 
+   .popup .right .form-group input, 
     .form-group textarea {
       width: 100%;
       padding: 10px;
@@ -2633,14 +2648,16 @@ justify-content: space-between;
       outline: none;
       background: transparent;
       font-size: 14px;
+      color: black;
     }
 
-    .form-group textarea {
+    .right .form-group textarea {
       resize: none;
       height: 60px;
+      color: #000;
     }
 
-    .submit-btnn {
+   .right .submit-btnn {
       background: #0066ff;
       border: none;
       padding: 12px 25px;
@@ -2776,11 +2793,11 @@ justify-content: space-between;
       font-weight: bold;
     }
 
-    .form-group {
+   .consult-right .form-group {
       margin-bottom: 20px;
     }
 
-    .form-group input,
+   .consult-right .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
@@ -2790,10 +2807,10 @@ justify-content: space-between;
       outline: none;
       background: transparent;
       color: white;
-      font-size: 14px;
+      font-size: 16px;
     }
 
-    .form-group textarea {
+    .consult-right .form-group textarea {
       height: 70px;
       resize: none;
     }
