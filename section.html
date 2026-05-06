@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-row {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  overflow: hidden;
+    margin-top: 100px;
+   
+}
+
+.row-img {
+    border-radius: 10px;
+  height: 500px;        /* Increased and fixed height */
+  width: 150px;         /* Initial (shrunk) width */
+  flex: 1 1 0;
+  object-fit: cover;    /* Prevent image distortion */
+  object-position:left center; /* Anchor the visible area to the left */
+  transform-origin: left center; /* Expand from left when hovered */
+  transition: flex 0.8s ease, width 0.5s ease, transform 0.5s ease;
+  cursor: pointer;
+}
+
+/* Enlarge width, keep height fixed when hovered */
+.row-img:hover {
+  flex: 3 1 0;
+  width: 300px;         /* Enlarged width */
+  transform: translateX(0); /* ensure anchored expansion */
+}
+
+/* Other images shrink further on hover, but height stays the same */
+.image-row:hover .row-img:not(:hover) {
+  flex: 0.7 1 0;
+  width: 60px;
+  opacity: 0.95;
+  transform: scaleX(1); /* don't flip or move non-hovered images */
+  /* height remains unchanged */
+}
+    </style>
+</head>
+<body>
+     <section class="container imagelarge" data-aos="fade-up" data-aos-duration="3000">
+            <h1>Crafting Solution with Technology<br> that works for you 1st</h1>
+            <div class="image-row">
+                <img src="/assets/images/artifical-intelligence.jpg" class="row-img" loading="lazy">
+                <img src="/assets/images/web-desiging.jpg" class="row-img" loading="lazy">
+                <img src="/assets/images/ar-vr-1.webp" class="row-img" loading="lazy">
+                <img src="/assets/images/blockchain-1.jpg" class="row-img" loading="lazy">
+                <img src="/assets/images/metaverse-2.webp" class="row-img" loading="lazy">
+                <img src="/assets/images/web-desiging.jpg" class="row-img" loading="lazy">
+            </div>
+
+        </section>
+</body>
+</html>
