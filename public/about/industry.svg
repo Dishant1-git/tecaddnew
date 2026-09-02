@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Illustration of the institute's links to hiring companies">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="0.55" stop-color="#1e40af" />
+      <stop offset="1" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2e8f0" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#94a3b8" stop-opacity="0.75" />
+    </linearGradient>
+    <radialGradient id="hub" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="mesh3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg3)" />
+  <rect width="1200" height="800" fill="url(#mesh3)" />
+
+  <!-- network of partner nodes around the institute hub -->
+  <g stroke="#93c5fd" stroke-opacity="0.45" stroke-width="2.5" fill="none">
+    <path d="M600 400 L250 210" />
+    <path d="M600 400 L950 210" />
+    <path d="M600 400 L200 520" />
+    <path d="M600 400 L1000 520" />
+    <path d="M600 400 L420 640" />
+    <path d="M600 400 L790 650" />
+  </g>
+
+  <ellipse cx="600" cy="400" rx="220" ry="180" fill="url(#hub)" />
+
+  <!-- partner nodes -->
+  <g>
+    <circle cx="250" cy="210" r="46" fill="#0f172a" fill-opacity="0.85" stroke="#60a5fa" stroke-opacity="0.5" stroke-width="2" />
+    <rect x="228" y="192" width="44" height="36" rx="6" fill="#93c5fd" fill-opacity="0.7" />
+    <circle cx="950" cy="210" r="46" fill="#0f172a" fill-opacity="0.85" stroke="#60a5fa" stroke-opacity="0.5" stroke-width="2" />
+    <rect x="928" y="192" width="44" height="36" rx="6" fill="#93c5fd" fill-opacity="0.55" />
+    <circle cx="200" cy="520" r="40" fill="#0f172a" fill-opacity="0.85" stroke="#60a5fa" stroke-opacity="0.5" stroke-width="2" />
+    <rect x="181" y="504" width="38" height="32" rx="6" fill="#93c5fd" fill-opacity="0.6" />
+    <circle cx="1000" cy="520" r="40" fill="#0f172a" fill-opacity="0.85" stroke="#60a5fa" stroke-opacity="0.5" stroke-width="2" />
+    <rect x="981" y="504" width="38" height="32" rx="6" fill="#93c5fd" fill-opacity="0.45" />
+    <circle cx="420" cy="640" r="34" fill="#0f172a" fill-opacity="0.85" stroke="#60a5fa" stroke-opacity="0.5" stroke-width="2" />
+    <rect x="404" y="626" width="32" height="28" rx="6" fill="#93c5fd" fill-opacity="0.55" />
+    <circle cx="790" cy="650" r="34" fill="#0f172a" fill-opacity="0.85" stroke="#60a5fa" stroke-opacity="0.5" stroke-width="2" />
+    <rect x="774" y="636" width="32" height="28" rx="6" fill="#93c5fd" fill-opacity="0.5" />
+  </g>
+
+  <!-- the institute at the centre -->
+  <g>
+    <rect x="500" y="300" width="200" height="200" rx="24" fill="url(#tower)" />
+    <rect x="500" y="300" width="200" height="52" rx="24" fill="#1d4ed8" />
+    <rect x="500" y="332" width="200" height="20" fill="#1d4ed8" />
+    <g fill="#1d4ed8" fill-opacity="0.35">
+      <rect x="528" y="382" width="48" height="40" rx="6" />
+      <rect x="596" y="382" width="48" height="40" rx="6" />
+      <rect x="528" y="440" width="48" height="40" rx="6" />
+    </g>
+    <rect x="596" y="440" width="48" height="60" rx="6" fill="#0f172a" fill-opacity="0.8" />
+    <rect x="536" y="314" width="128" height="16" rx="8" fill="#ffffff" fill-opacity="0.85" />
+  </g>
+
+  <!-- outbound arrows: graduates going out to work -->
+  <g fill="#f0f9ff" fill-opacity="0.8">
+    <path d="M726 330 L766 348 L726 366 Z" />
+    <path d="M474 330 L434 348 L474 366 Z" fill-opacity="0.5" />
+  </g>
+</svg>

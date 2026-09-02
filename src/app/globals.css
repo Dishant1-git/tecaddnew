@@ -1,0 +1,722 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand — primary blue, matching the TechCadd family palette */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #172554;
+
+  /* Ink — dark sections and heading text */
+  --color-ink: #0f172a;
+  --color-ink-soft: #1e293b;
+  --color-ink-mute: #334155;
+
+  /*
+   * Gold — the contrast accent against the brand blue. A true yellow ramp with
+   * no orange in it. Used for heading accent words, eyebrows and the primary
+   * call to action. On dark grounds use 300; on white use 500, the darkest
+   * step that still reads unmistakably yellow.
+   */
+  --color-gold-100: #fef9c3;
+  --color-gold-200: #fef08a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #facc15;
+  --color-gold-500: #eab308;
+  --color-gold-600: #ca8a04;
+  --color-gold-700: #a16207;
+
+  /* Neutrals */
+  --color-line: #e2e8f0;
+  --color-muted: #64748b;
+  --color-accent: #33366f;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-display);
+
+  --radius-card: 1rem;
+
+  --animate-marquee: marquee var(--marquee-duration, 60s) linear infinite;
+  --animate-marquee-reverse: marquee-reverse var(--marquee-duration, 60s) linear
+    infinite;
+  --animate-twinkle: twinkle var(--twinkle-duration, 2.2s) ease-in-out infinite;
+  /* Waving hand: two quick swings, then a beat of rest before repeating. */
+  --animate-wave: wave 2.6s ease-in-out infinite;
+  /* Slow drift of the circuit tile; the distance matches its 160px tile so
+     the loop is seamless. */
+  --animate-trace: trace 40s linear infinite;
+
+  /* Course-page ambience. The homepage hero drifts its circuit tile in one
+     straight line; course pages instead layer slow counter-motion — traces
+     crawling one way, the grid panning the other, two aurora blooms breathing
+     out of phase, and a scan beam falling through the whole stack. */
+  --animate-trace-slow: trace-reverse 72s linear infinite;
+  --animate-grid-pan: grid-pan 38s linear infinite;
+  --animate-aurora-a: aurora-a 26s ease-in-out infinite alternate;
+  --animate-aurora-b: aurora-b 34s ease-in-out infinite alternate;
+  --animate-beam: beam 12s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes trace-reverse {
+  from {
+    background-position: 160px 160px;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* Pans one full 64px grid cell, so the loop point is invisible. */
+@keyframes grid-pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 64px 64px;
+  }
+}
+
+/* Transform-only so the blur layer is never re-rasterised mid-animation. */
+@keyframes aurora-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(11%, 7%, 0) scale(1.22);
+    opacity: 0.95;
+  }
+}
+
+@keyframes aurora-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.14);
+    opacity: 0.9;
+  }
+  to {
+    transform: translate3d(-13%, -9%, 0) scale(0.94);
+    opacity: 0.5;
+  }
+}
+
+@keyframes beam {
+  0% {
+    transform: translateY(-70%);
+    opacity: 0;
+  }
+  15%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(190%);
+    opacity: 0;
+  }
+}
+
+@keyframes trace {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 160px 160px;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes watermark-shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes wave {
+  0%,
+  65%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(15deg);
+  }
+  20%,
+  40% {
+    transform: rotate(-9deg);
+  }
+  50% {
+    transform: rotate(11deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.86);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Fixed header is 80px tall; keep anchor targets clear of it. */
+    scroll-padding-top: 6rem;
+  }
+
+  /*
+   * Two families, no more: Sora carries every heading (via `font-display`,
+   * applied by SplitHeading/WordsUp and the heading utilities), Inter carries
+   * body copy, UI and small-caps labels. Nothing else — no monospace — so the
+   * page reads as one typographic system.
+   */
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Proportional lining figures + real kerning: the difference between
+       "a webfont" and typeset text. */
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1,
+      "calt" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headings sit tighter and never break mid-word. */
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-display), var(--font-sans), ui-sans-serif, sans-serif;
+    letter-spacing: -0.015em;
+    text-wrap: pretty;
+  }
+
+  /* Figures in tables, stats and counters stay column-aligned. */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-600);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Page container — 1304px matches the reference site's measured width. */
+  .container-page {
+    width: 100%;
+    max-width: 1304px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  /*
+   * Reveal-on-scroll. The hidden state is scoped to `html.js`, a class set by a
+   * blocking inline script in the root layout. Without JavaScript the class is
+   * never added, so every section renders visible instead of an empty page.
+   */
+  .word {
+    display: inline-block;
+  }
+
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .js .reveal.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Per-word heading stagger, driven by --i on each word span. */
+  .js .word {
+    opacity: 0;
+    transform: translateY(0.5em);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--i, 0) * 55ms);
+  }
+
+  .js .in-view .word,
+  .js .word.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Subtle grid overlay used behind dark hero/CTA panels. */
+  .grid-overlay {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /*
+   * Tech texture for dark hero backgrounds: an etched circuit-board trace
+   * pattern (paths + solder nodes) drawn as an inline SVG tile. Purely
+   * decorative — always render it inside an aria-hidden layer.
+   */
+  .circuit-texture {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160' fill='none'%3E%3Cg stroke='%23ffffff' stroke-opacity='0.16' stroke-width='1'%3E%3Cpath d='M0 40h40V0'/%3E%3Cpath d='M40 40h50v50h70'/%3E%3Cpath d='M0 120h60v40'/%3E%3Cpath d='M120 0v60h40'/%3E%3Cpath d='M100 160v-30h60'/%3E%3Cpath d='M60 120v40'/%3E%3Cpath d='M90 90v40'/%3E%3C/g%3E%3Cg fill='%2360a5fa' fill-opacity='0.34'%3E%3Ccircle cx='40' cy='40' r='2.6'/%3E%3Ccircle cx='90' cy='90' r='2.6'/%3E%3Ccircle cx='120' cy='60' r='2.6'/%3E%3Ccircle cx='60' cy='120' r='2.6'/%3E%3Ccircle cx='100' cy='130' r='2.6'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  /* Fine dot matrix — reads as a PCB solder grid behind the circuit traces. */
+  .dot-matrix {
+    background-image: radial-gradient(
+      rgb(255 255 255 / 0.28) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /*
+   * Giant wordmark watermark across the foot of the page. The gradient is
+   * clipped to the glyphs and twice as wide as the element, so sweeping
+   * background-position from 0% to 200% drags one full tile past the text —
+   * a seamless shimmer, since both ends of the gradient are the same faint
+   * grey-blue. Decorative only: the element must stay aria-hidden and
+   * pointer-events-none so it never blocks the links above it.
+   */
+  .footer-watermark {
+    background-image: linear-gradient(
+      100deg,
+      rgb(203 213 225 / 0.5) 0%,
+      rgb(203 213 225 / 0.5) 32%,
+      rgb(255 255 255 / 0.95) 50%,
+      rgb(203 213 225 / 0.5) 68%,
+      rgb(203 213 225 / 0.5) 100%
+    );
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    pointer-events: none;
+    animation: watermark-shimmer 9s linear infinite;
+  }
+
+  /*
+   * Pointer ring. Its transform is written by CursorRing's rAF loop; only the
+   * paint properties live here. It never receives pointer events, and the
+   * component refuses to mount its loop on touch or under reduced motion, so
+   * this is inert on those devices.
+   */
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 120;
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px solid rgb(37 99 235 / 0.6);
+    border-radius: 9999px;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform;
+    transition:
+      opacity 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .cursor-ring.is-active {
+    opacity: 1;
+  }
+
+  .cursor-ring.is-hovering {
+    background-color: rgb(37 99 235 / 0.12);
+    border-color: rgb(37 99 235 / 0.95);
+  }
+
+  /* Over dark sections the ring inverts so it stays visible. */
+  .cursor-ring.is-light {
+    border-color: rgb(255 255 255 / 0.7);
+  }
+
+  .cursor-ring.is-light.is-hovering {
+    background-color: rgb(255 255 255 / 0.16);
+    border-color: rgb(255 255 255 / 0.95);
+  }
+
+  /*
+   * Light-ground twins of the dark textures above. Same circuit tile and
+   * solder grid, drawn in ink instead of white so they read on white panels.
+   */
+  .circuit-texture-ink {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160' fill='none'%3E%3Cg stroke='%230f172a' stroke-opacity='0.5' stroke-width='1'%3E%3Cpath d='M0 40h40V0'/%3E%3Cpath d='M40 40h50v50h70'/%3E%3Cpath d='M0 120h60v40'/%3E%3Cpath d='M120 0v60h40'/%3E%3Cpath d='M100 160v-30h60'/%3E%3Cpath d='M60 120v40'/%3E%3Cpath d='M90 90v40'/%3E%3C/g%3E%3Cg fill='%232563eb' fill-opacity='0.55'%3E%3Ccircle cx='40' cy='40' r='2.6'/%3E%3Ccircle cx='90' cy='90' r='2.6'/%3E%3Ccircle cx='120' cy='60' r='2.6'/%3E%3Ccircle cx='60' cy='120' r='2.6'/%3E%3Ccircle cx='100' cy='130' r='2.6'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  .dot-matrix-ink {
+    background-image: radial-gradient(
+      rgb(15 23 42 / 0.5) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /*
+   * Liquid glass. A translucent, blurred pane with a bright top-edge specular
+   * and a soft inner rim, so it reads as a physical sheet lying over whatever
+   * texture is behind it rather than a flat white box.
+   *
+   * The highlight is a ::before inset by a pixel, which keeps it inside the
+   * border radius without a second wrapper element.
+   */
+  .liquid-glass {
+    position: relative;
+    isolation: isolate;
+    background-color: rgb(255 255 255 / 0.55);
+    backdrop-filter: blur(20px) saturate(1.6);
+    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    border: 1px solid rgb(255 255 255 / 0.75);
+    box-shadow:
+      0 24px 70px -32px rgb(15 23 42 / 0.4),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.9);
+  }
+
+  .liquid-glass::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(
+      to bottom,
+      rgb(255 255 255 / 0.75) 0%,
+      rgb(255 255 255 / 0.15) 45%,
+      rgb(255 255 255 / 0) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Film-grain noise so the large gradient washes don't band on wide screens. */
+  .tech-noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /*
+   * TeamCard reveal. The card's own width/radius/border hover transition is
+   * plain Tailwind; these three descendants stay hidden at the resting pill
+   * width and ease in only once hover or focus has room to show them, so the
+   * capsule reads as "name only" until it widens.
+   */
+  .team-card__rule {
+    width: 0;
+    opacity: 0;
+    transition:
+      width 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 400ms ease;
+  }
+
+  .team-card__role {
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity 400ms ease,
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .team-card__veil {
+    background: radial-gradient(120% 70% at 50% 100%, rgb(96 165 250 / 0.22), transparent 70%);
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
+
+  .team-card:hover .team-card__rule,
+  .team-card:focus .team-card__rule {
+    width: 2rem;
+    opacity: 1;
+  }
+
+  .team-card:hover .team-card__role,
+  .team-card:focus .team-card__role {
+    opacity: 1;
+    transform: none;
+  }
+
+  .team-card:hover .team-card__veil,
+  .team-card:focus .team-card__veil {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .word {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-trace,
+  .animate-trace-slow,
+  .animate-grid-pan,
+  .animate-aurora-a,
+  .animate-aurora-b,
+  .animate-beam,
+  .animate-twinkle,
+  .animate-wave,
+  .footer-watermark {
+    animation: none !important;
+  }
+
+  .team-card__rule,
+  .team-card__role,
+  .team-card__veil {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   One-screen course panels
+   --------------------------------------------------------------------------
+   Course detail pages (/courses/[slug]) present every section as a single
+   viewport-height panel that snaps under the scroll. Everything below is
+   scoped either to `.course-snap` — a class ScreenSnap puts on <html> only
+   while such a page is mounted — or to opt-in classes the course components
+   apply themselves, so the homepage and the course catalogue are untouched.
+   ========================================================================== */
+
+@layer components {
+  .course-snap {
+    /* Proximity, never mandatory: a panel that outgrows a short viewport must
+       stay scrollable rather than trapping the reader at a snap point. */
+    scroll-snap-type: y proximity;
+    /* Panels align flush with the viewport top; the 6rem anchor offset used
+       elsewhere would leave a slice of the previous panel showing. */
+    scroll-padding-top: 0;
+  }
+
+  .screen-section {
+    /* Floating header: h-20 unscrolled, pt-3 + h-17 once scrolled — 5rem either way. */
+    --screen-header: 5rem;
+    /* Enrol bar pinned over the bottom of every panel except the hero. */
+    --screen-bar: 0rem;
+    --screen-gutter: clamp(0.75rem, 2.2vh, 2.25rem);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    /* Landscape phones cannot hold a readable panel; below this the page
+       simply scrolls again instead of compressing text into nothing. */
+    min-height: 34rem;
+    padding-top: calc(var(--screen-header) + var(--screen-gutter));
+    padding-bottom: calc(var(--screen-bar) + var(--screen-gutter));
+    scroll-snap-align: start;
+  }
+
+  .screen-section-bar {
+    --screen-bar: 4.75rem;
+  }
+
+  /*
+   * The middle of a panel. Auto margins rather than `justify-content: center`
+   * — a centred flex container clips its own overflow at the top edge, auto
+   * margins collapse to zero instead — so content that cannot fit the
+   * smallest screens scrolls inside the panel rather than escaping it.
+   */
+  .screen-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .screen-body > :first-child {
+    margin-block-start: auto;
+  }
+
+  .screen-body > :last-child {
+    margin-block-end: auto;
+  }
+
+  /* Variant for panels whose children run their own scrollers. */
+  .screen-body-fill {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* A bounded list inside a panel: the module spine, FAQ stack, role list. */
+  .screen-scroll {
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .screen-body,
+  .screen-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(148 163 184 / 0.4) transparent;
+  }
+
+  .screen-body::-webkit-scrollbar,
+  .screen-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .screen-body::-webkit-scrollbar-thumb,
+  .screen-scroll::-webkit-scrollbar-thumb {
+    background-color: rgb(148 163 184 / 0.4);
+    border-radius: 9999px;
+  }
+
+  /*
+   * Card grids become a swipeable rail on phones — the only way to keep every
+   * card in a set reachable without the panel growing past one screen. Add
+   * `lg:grid lg:grid-cols-* lg:overflow-visible` to restore the grid.
+   */
+  .card-rail {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .card-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-rail > * {
+    flex: 0 0 min(84%, 22rem);
+    scroll-snap-align: center;
+  }
+
+  /*
+   * Type and rhythm that track viewport height. Panels are a fixed box, so
+   * everything inside has to shrink with the screen instead of overflowing it.
+   */
+  .fluid-h1 {
+    font-size: clamp(1.65rem, 0.9rem + 2.2vh + 1.35vw, 3.6rem);
+    line-height: 1.06;
+  }
+
+  .fluid-h2 {
+    font-size: clamp(1.35rem, 0.85rem + 1.7vh + 0.55vw, 2.25rem);
+    line-height: 1.14;
+  }
+
+  .fluid-h3 {
+    font-size: clamp(1.05rem, 0.8rem + 0.9vh + 0.3vw, 1.5rem);
+    line-height: 1.2;
+  }
+
+  .fluid-lead {
+    font-size: clamp(0.85rem, 0.74rem + 0.42vh + 0.14vw, 1.0625rem);
+    line-height: 1.6;
+  }
+
+  .fluid-body {
+    font-size: clamp(0.78rem, 0.7rem + 0.28vh + 0.1vw, 0.9375rem);
+    line-height: 1.6;
+  }
+
+  .fluid-micro {
+    font-size: clamp(0.65rem, 0.6rem + 0.16vh, 0.775rem);
+  }
+
+  .mt-fluid {
+    margin-top: clamp(0.6rem, 1.5vh, 1.5rem);
+  }
+
+  .mt-fluid-lg {
+    margin-top: clamp(0.9rem, 2.6vh, 2.5rem);
+  }
+
+  .p-fluid {
+    padding: clamp(0.85rem, 2vh, 1.75rem);
+  }
+
+  .py-fluid {
+    padding-block: clamp(0.6rem, 1.4vh, 1.15rem);
+  }
+
+  .gap-fluid {
+    gap: clamp(0.5rem, 1.3vh, 1.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-snap {
+    scroll-snap-type: none;
+  }
+}

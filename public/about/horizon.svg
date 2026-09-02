@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Illustration of a path leading toward a horizon marked by a guiding star">
+  <defs>
+    <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1220" />
+      <stop offset="0.45" stop-color="#1e3a8a" />
+      <stop offset="0.72" stop-color="#2563eb" />
+      <stop offset="1" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#93c5fd" stop-opacity="0.15" />
+      <stop offset="1" stop-color="#f8fafc" stop-opacity="0.5" />
+    </linearGradient>
+    <radialGradient id="star" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f0f9ff" stop-opacity="0.95" />
+      <stop offset="0.35" stop-color="#93c5fd" stop-opacity="0.45" />
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="hmesh" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#hsky)" />
+  <rect width="1200" height="800" fill="url(#hmesh)" />
+
+  <!-- guiding star above the horizon -->
+  <circle cx="600" cy="300" r="220" fill="url(#star)" />
+  <path d="M600 226 L618 288 L680 306 L618 324 L600 386 L582 324 L520 306 L582 288 Z" fill="#f8fafc" fill-opacity="0.95" />
+  <circle cx="600" cy="306" r="10" fill="#ffffff" />
+
+  <!-- scattered stars -->
+  <g fill="#e0f2fe" fill-opacity="0.7">
+    <circle cx="230" cy="150" r="4" />
+    <circle cx="360" cy="96" r="3" />
+    <circle cx="880" cy="130" r="4" />
+    <circle cx="1010" cy="212" r="3" />
+    <circle cx="150" cy="286" r="3" />
+    <circle cx="1060" cy="86" r="3" />
+  </g>
+
+  <!-- horizon line -->
+  <path d="M0 556 H1200" stroke="#bfdbfe" stroke-opacity="0.45" stroke-width="2" />
+  <ellipse cx="600" cy="556" rx="420" ry="26" fill="#60a5fa" fill-opacity="0.18" />
+
+  <!-- ridges either side -->
+  <path d="M0 556 L180 470 L330 556 Z" fill="#0f172a" fill-opacity="0.55" />
+  <path d="M860 556 L1020 462 L1200 556 Z" fill="#0f172a" fill-opacity="0.55" />
+
+  <!-- the road: a track running from here to the horizon -->
+  <path d="M600 556 L900 800 L300 800 Z" fill="url(#road)" />
+  <g stroke="#0b1220" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round">
+    <path d="M600 576 V596" />
+    <path d="M600 622 V656" />
+    <path d="M600 692 V742" />
+  </g>
+
+  <!-- milestone markers along the way -->
+  <g>
+    <circle cx="466" cy="712" r="14" fill="#0f172a" fill-opacity="0.9" stroke="#60a5fa" stroke-opacity="0.7" stroke-width="3" />
+    <circle cx="700" cy="654" r="12" fill="#0f172a" fill-opacity="0.9" stroke="#60a5fa" stroke-opacity="0.6" stroke-width="3" />
+    <circle cx="546" cy="608" r="10" fill="#0f172a" fill-opacity="0.9" stroke="#60a5fa" stroke-opacity="0.5" stroke-width="3" />
+  </g>
+
+  <!-- a figure setting out -->
+  <g fill="#0b1220" fill-opacity="0.92">
+    <circle cx="372" cy="694" r="26" />
+    <path d="M330 776a42 42 0 0 1 84 0z" />
+  </g>
+</svg>

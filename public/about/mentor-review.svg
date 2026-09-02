@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Illustration of a mentor reviewing a student's work">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="0.5" stop-color="#1e40af" />
+      <stop offset="1" stop-color="#33366f" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#0f172a" stop-opacity="0.75" />
+    </linearGradient>
+    <radialGradient id="lamp" cx="0.5" cy="0.4" r="0.55">
+      <stop offset="0" stop-color="#93c5fd" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#93c5fd" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#ffffff" fill-opacity="0.08" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect width="1200" height="800" fill="url(#dots)" />
+  <ellipse cx="640" cy="300" rx="480" ry="280" fill="url(#lamp)" />
+
+  <!-- review window -->
+  <rect x="300" y="120" width="700" height="420" rx="20" fill="url(#panel)" stroke="#60a5fa" stroke-opacity="0.35" stroke-width="2" />
+  <rect x="300" y="120" width="700" height="48" rx="20" fill="#60a5fa" fill-opacity="0.1" />
+  <circle cx="332" cy="144" r="6" fill="#f87171" fill-opacity="0.85" />
+  <circle cx="354" cy="144" r="6" fill="#fbbf24" fill-opacity="0.85" />
+  <circle cx="376" cy="144" r="6" fill="#34d399" fill-opacity="0.85" />
+  <rect x="420" y="136" width="180" height="16" rx="8" fill="#ffffff" fill-opacity="0.14" />
+
+  <!-- diff lines: two flagged, the rest neutral -->
+  <g>
+    <rect x="332" y="200" width="640" height="30" rx="8" fill="#ffffff" fill-opacity="0.04" />
+    <rect x="352" y="209" width="300" height="12" rx="6" fill="#93c5fd" fill-opacity="0.7" />
+
+    <rect x="332" y="242" width="640" height="30" rx="8" fill="#f87171" fill-opacity="0.14" />
+    <rect x="332" y="242" width="5" height="30" rx="2.5" fill="#f87171" fill-opacity="0.9" />
+    <rect x="352" y="251" width="420" height="12" rx="6" fill="#fecaca" fill-opacity="0.75" />
+
+    <rect x="332" y="284" width="640" height="30" rx="8" fill="#34d399" fill-opacity="0.14" />
+    <rect x="332" y="284" width="5" height="30" rx="2.5" fill="#34d399" fill-opacity="0.9" />
+    <rect x="352" y="293" width="360" height="12" rx="6" fill="#bbf7d0" fill-opacity="0.75" />
+
+    <rect x="332" y="326" width="640" height="30" rx="8" fill="#ffffff" fill-opacity="0.04" />
+    <rect x="352" y="335" width="500" height="12" rx="6" fill="#93c5fd" fill-opacity="0.55" />
+
+    <rect x="332" y="368" width="640" height="30" rx="8" fill="#ffffff" fill-opacity="0.04" />
+    <rect x="352" y="377" width="240" height="12" rx="6" fill="#93c5fd" fill-opacity="0.4" />
+  </g>
+
+  <!-- mentor comment bubble -->
+  <g>
+    <rect x="700" y="410" width="290" height="102" rx="16" fill="#2563eb" />
+    <path d="M742 512 L742 544 L778 512 Z" fill="#2563eb" />
+    <rect x="726" y="438" width="220" height="12" rx="6" fill="#ffffff" fill-opacity="0.85" />
+    <rect x="726" y="462" width="170" height="12" rx="6" fill="#ffffff" fill-opacity="0.6" />
+    <rect x="726" y="486" width="120" height="12" rx="6" fill="#ffffff" fill-opacity="0.4" />
+  </g>
+
+  <!-- mentor and student at the desk -->
+  <rect x="180" y="672" width="840" height="18" rx="9" fill="#e2e8f0" fill-opacity="0.85" />
+  <g fill="#0b1220" fill-opacity="0.92">
+    <circle cx="420" cy="606" r="42" />
+    <path d="M352 678a68 68 0 0 1 136 0z" />
+  </g>
+  <g fill="#0b1220" fill-opacity="0.75">
+    <circle cx="620" cy="620" r="36" />
+    <path d="M562 682a58 58 0 0 1 116 0z" />
+  </g>
+</svg>

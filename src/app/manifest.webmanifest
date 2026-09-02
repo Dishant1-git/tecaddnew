@@ -1,0 +1,30 @@
+{
+  "name": "TechCadd Amritsar — AI & Software Training",
+  "short_name": "TechCadd",
+  "description": "IT training institute in Amritsar covering AI, cloud, cybersecurity and full-stack engineering, with live projects and placement support.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#2a2c5e",
+  "theme_color": "#2a2c5e",
+  "icons": [
+    {
+      "src": "/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
